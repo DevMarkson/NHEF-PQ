@@ -8,7 +8,7 @@ export async function GET() {
     await dbConnect();
     const questions = await Question.find();
     return NextResponse.json(questions);
-  } catch (error) {
-    return NextResponse.error();
+  } catch {
+    return NextResponse.json({ error: "Failed to fetch questions" }, { status: 500 });
   }
 }
