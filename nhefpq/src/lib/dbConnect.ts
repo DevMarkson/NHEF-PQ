@@ -1,28 +1,14 @@
-// src/lib/dbConnect.ts
-import mongoose from 'mongoose';
+"use server";  // Tell Next.js this runs only on the server
+
+import mongoose from "mongoose";
 
 const MONGODB_URI = process.env.MONGODB_URI;
+
 if (!MONGODB_URI) {
-  throw new Error(
-    'Please define the MONGODB_URI environment variable inside .env.local'
-  );
+  throw new Error("Please define the MONGODB_URI environment variable");
 }
 
-interface MongooseCache {
-  conn: typeof mongoose | null;
-  promise: Promise<typeof mongoose> | null;
-}
-
-declare global {
-  // Extend the Node global with our cache for mongoose
-  // eslint-disable-next-line no-var
-  var mongoose: MongooseCache;
-}
-
-let cached = global.mongoose;
-if (!cached) {
-  cached = global.mongoose = { conn: null, promise: null };
-}
+let cached: any = (global as any).mongoose || { conn: null, promise: null };
 
 async function dbConnect() {
   if (cached.conn) {
@@ -30,9 +16,13 @@ async function dbConnect() {
   }
 
   if (!cached.promise) {
-    cached.promise = mongoose.connect(MONGODB_URI!, { bufferCommands: false });
+    cached.promise = mongoose.connect(MONGODB_URI, {
+      bufferCommands: false,
+    }).then((mongoose) => mongoose);
   }
+
   cached.conn = await cached.promise;
+  (global as any).mongoose = cached;
   return cached.conn;
 }
 
