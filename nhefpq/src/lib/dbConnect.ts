@@ -1,10 +1,10 @@
 "use server";
 import mongoose, { Connection } from "mongoose";
 
-const MONGODB_URI = process.env.MONGODB_URI;
+const MONGODB_URI: string = process.env.MONGODB_URI as string;
 
 if (!MONGODB_URI) {
-  throw new Error("Please define the MONGODB_URI environment variable inside .env.local");
+  throw new Error("⚠️ Please define the MONGODB_URI environment variable inside .env.local or Vercel settings.");
 }
 
 interface CachedConnection {
@@ -19,7 +19,7 @@ async function dbConnect(): Promise<Connection> {
   if (cached.conn) return cached.conn;
 
   if (!cached.promise) {
-    cached.promise = mongoose.connect(MONGODB_URI, {
+    cached.promise = mongoose.connect(MONGODB_URI!, {  // Adding `!` ensures TypeScript treats it as a string
       bufferCommands: false,
     }).then((mongoose) => mongoose.connection);
   }
