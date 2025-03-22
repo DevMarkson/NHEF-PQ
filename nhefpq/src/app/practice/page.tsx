@@ -2,17 +2,15 @@
 import { useState } from 'react';
 
 export default function PracticeMode() {
-  const [timeLeft, setTimeLeft] = useState(60); // 60 seconds for demo
+  const [timeLeft, setTimeLeft] = useState(60);
 
   return (
-    <div className="flex flex-col items-center">
-      <h1 className="text-3xl font-bold text-blue-700 mb-4">Practice Mode</h1>
-      <div className="bg-white rounded-lg shadow p-6 w-full max-w-md">
-        <p className="text-xl font-semibold text-center mb-4">
-          Time Left: {timeLeft} seconds
-        </p>
-        <p className="text-gray-700 text-center">
-          Answer the questions under timed conditions. (Timer functionality to be implemented.)
+    <div className="flex flex-col items-center p-4 min-h-screen">
+      <h1 className="text-3xl font-bold text-green-700 mb-4 text-center">Practice Mode</h1>
+      <div className="bg-white rounded-lg shadow-md p-4 md:p-6 w-full max-w-md">
+        <p className="text-lg font-semibold text-center mb-4">Time Left: {timeLeft} seconds</p>
+        <p className="text-gray-700 text-center text-sm md:text-base">
+          Answer the questions under timed conditions.
         </p>
       </div>
     </div>
