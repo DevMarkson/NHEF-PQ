@@ -1,14 +1,18 @@
-// src/app/api/questions/route.ts
-import { NextResponse } from 'next/server';
-import dbConnect from '@/lib/dbConnect';
-import Question from '@/models/Question';
+import { NextResponse } from "next/server";
+import { MongoClient } from "mongodb";
+
+const uri = process.env.MONGODB_URI || ""; 
+const client = new MongoClient(uri);
 
 export async function GET() {
   try {
-    await dbConnect();
-    const questions = await Question.find();
+    await client.connect();
+    const db = client.db("nhef_questions_db"); // Your database name
+    const collection = db.collection("questions"); // Your collection name
+    const questions = await collection.find({}).toArray();
     return NextResponse.json(questions);
-  } catch {
+  } catch (error) {
+    console.error("Error fetching questions:", error);
     return NextResponse.json({ error: "Failed to fetch questions" }, { status: 500 });
   }
 }
