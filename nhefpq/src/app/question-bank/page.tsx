@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Image from "next/image"; // Import Next.js Image component
 
 interface Question {
   _id: string;
@@ -10,8 +11,8 @@ interface Question {
   explanation?: string;
   testSection: string;
   passage?: string;
-  image?: string; // Add image for abstract reasoning questions
-  rules?: string[]; // Add rules for abstract reasoning questions
+  image?: string; // Image for abstract reasoning questions
+  rules?: string[]; // Rules for abstract reasoning questions
 }
 
 interface Section {
@@ -92,7 +93,7 @@ export default function QuestionBank() {
               .map((section, sectionIdx) => (
                 <div key={sectionIdx} className="bg-white rounded-lg shadow-md p-4 md:p-6 mb-6">
                   <h2 className="text-lg md:text-xl font-bold text-blue-700 mb-2">{section.testSection}</h2>
-                  {section.questions.map((q, questionIdx) => (
+                  {section.questions.map((q) => (
                     <div key={q._id} className="mb-4">
                       {/* Render passage if it exists */}
                       {q.passage && (
@@ -102,11 +103,16 @@ export default function QuestionBank() {
                       )}
                       {/* Render image if it exists */}
                       {q.image && (
-                        <img
-                          src={q.image}
-                          alt={`Question ${q.number}`}
-                          className="w-full h-auto mb-4 rounded-md"
-                        />
+                        <div className="w-full h-auto mb-4 relative">
+                          <Image
+                            src={q.image}
+                            alt={`Question ${q.number}`}
+                            width={500}
+                            height={300}
+                            layout="responsive"
+                            className="rounded-md"
+                          />
+                        </div>
                       )}
                       <p className="font-semibold text-gray-800">{q.content}</p>
                       <ul className="list-disc pl-5 mt-2">
