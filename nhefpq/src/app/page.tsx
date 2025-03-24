@@ -12,7 +12,7 @@ export default function Home() {
       // Show SweetAlert popup when the page loads
       Swal.fire({
         title: "Subscribe to Access",
-        text: "Please subscribe to our YouTube channel to access the Question Bank and Practice Mode.",
+        text: "Please subscribe to my YouTube channel to access the Question Bank and Practice Mode.",
         icon: "info",
         confirmButtonText: "Go to YouTube",
         allowOutsideClick: false, // Prevent closing by clicking outside
@@ -56,8 +56,8 @@ export default function Home() {
       )}
 
       {/* Footer with Personalization */}
-      <footer className="mt-8 text-sm text-gray-600">
-        Developed by <strong>Markson Anietie</strong>, Tested by <strong>Philemon Oyedele</strong>, With Love from U.I (Prospective 2025 NHEF Scholars)
+      <footer className="mt-8 text-sm text-white">
+        Developed by <strong>Markson Anietie Favour</strong>, Tested by <strong>Philemon Oyedele</strong>, With Love from U.I (Prospective 2025 NHEF Scholars)
       </footer>
     </div>
   );
