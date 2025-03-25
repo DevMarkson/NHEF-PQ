@@ -24,8 +24,12 @@ interface Section {
 export default function QuestionBank() {
   const [sections, setSections] = useState<Section[]>([]);
   const [loading, setLoading] = useState(true);
-  const [selectedTest, setSelectedTest] = useState<string>(""); // Track the selected test
-  const [availableTests, setAvailableTests] = useState<string[]>([]); // List of available tests
+  const [availableTests, setAvailableTests] = useState<{ [key: string]: string[] }>({
+    verbal: [],
+    abstract: [],
+  }); // Grouped tests by category
+  const [selectedCategory, setSelectedCategory] = useState<string>(""); // Track selected category
+  const [selectedTest, setSelectedTest] = useState<string>(""); // Track selected test
 
   useEffect(() => {
     // Fetch all questions and group by testSection
@@ -45,8 +49,17 @@ export default function QuestionBank() {
         });
 
         const sectionsArray = Object.values(groupedSections);
+
+        // Group tests into verbal and abstract categories
+        const verbalTests = sectionsArray
+          .map((section) => section.testSection)
+          .filter((test) => test.toLowerCase().includes("verbal"));
+        const abstractTests = sectionsArray
+          .map((section) => section.testSection)
+          .filter((test) => test.toLowerCase().includes("abstract"));
+
         setSections(sectionsArray);
-        setAvailableTests(sectionsArray.map((section) => section.testSection)); // Extract test names
+        setAvailableTests({ verbal: verbalTests, abstract: abstractTests });
         setLoading(false);
       })
       .catch((err) => {
@@ -55,36 +68,66 @@ export default function QuestionBank() {
       });
   }, []);
 
+  const handleCategorySelection = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedCategory(event.target.value);
+    setSelectedTest(""); // Reset the selected test when category changes
+  };
+
   const handleTestSelection = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedTest(event.target.value);
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen p-4 md:p-6">
+    <div className="bg-white min-h-screen p-4 md:p-6 w-full">
       <h1 className="text-3xl font-bold text-green-700 mb-6 text-center">Question Bank</h1>
       {loading ? (
         <p className="text-gray-700 text-center">Loading questions...</p>
       ) : (
         <div className="max-w-4xl mx-auto">
-          {/* Dropdown to select the test */}
+          {/* Category Selection */}
           <div className="mb-6">
-            <label htmlFor="test-select" className="block text-lg font-medium text-gray-700 mb-2">
-              Select a Test:
+            <label
+              htmlFor="category-select"
+              className="block text-lg font-medium text-gray-700 mb-2"
+            >
+              Select a Category:
             </label>
             <select
-              id="test-select"
-              value={selectedTest}
-              onChange={handleTestSelection}
+              id="category-select"
+              value={selectedCategory}
+              onChange={handleCategorySelection}
               className="w-full p-2 border border-gray-300 rounded-md bg-white text-gray-800"
             >
-              <option value="">-- Select a Test --</option>
-              {availableTests.map((test, idx) => (
-                <option key={idx} value={test}>
-                  {test}
-                </option>
-              ))}
+              <option value="">-- Select a Category --</option>
+              <option value="verbal">Verbal Reasoning Tests</option>
+              <option value="abstract">Abstract Reasoning Tests</option>
             </select>
           </div>
+
+          {/* Test Selection */}
+          {selectedCategory && (
+            <div className="mb-6">
+              <label
+                htmlFor="test-select"
+                className="block text-lg font-medium text-gray-700 mb-2"
+              >
+                Select a Test:
+              </label>
+              <select
+                id="test-select"
+                value={selectedTest}
+                onChange={handleTestSelection}
+                className="w-full p-2 border border-gray-300 rounded-md bg-white text-gray-800"
+              >
+                <option value="">-- Select a Test --</option>
+                {availableTests[selectedCategory].map((test, idx) => (
+                  <option key={idx} value={test}>
+                    {test}
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
 
           {/* Display questions for the selected test */}
           {selectedTest ? (

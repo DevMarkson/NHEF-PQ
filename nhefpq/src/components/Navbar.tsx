@@ -55,6 +55,14 @@ export default function Navbar() {
           >
             Practice Mode
           </Link>
+          <a
+            href="https://www.youtube.com/@DevMarkson"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-300"
+          >
+            Please subscribe to my YouTube 🙏
+          </a>
         </div>
       </nav>
     </header>
