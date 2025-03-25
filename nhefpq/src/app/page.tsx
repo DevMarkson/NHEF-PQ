@@ -1,8 +1,6 @@
 "use client"; // Add this directive at the top
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import Swal from "sweetalert2";
 
 export default function Home() {
   return (
