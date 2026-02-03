@@ -27,166 +27,208 @@ export default function QuestionBank() {
   const [availableTests, setAvailableTests] = useState<{ [key: string]: string[] }>({
     verbal: [],
     abstract: [],
-  }); // Grouped tests by category
-  const [selectedCategory, setSelectedCategory] = useState<string>(""); // Track selected category
-  const [selectedTest, setSelectedTest] = useState<string>(""); // Track selected test
+  });
+  const [selectedCategory, setSelectedCategory] = useState<string>("");
+  const [selectedTest, setSelectedTest] = useState<string>("");
 
   useEffect(() => {
-    // Fetch all questions and group by testSection
-    fetch("/api/questions")
+    // Fetch only test section names initially for speed
+    fetch("/api/questions?metadata=true")
       .then((res) => res.json())
-      .then((data) => {
-        const groupedSections: { [key: string]: Section } = {};
-        data.forEach((q: Question) => {
-          if (!groupedSections[q.testSection]) {
-            groupedSections[q.testSection] = {
-              testSection: q.testSection,
-              passage: q.passage,
-              questions: [],
-            };
-          }
-          groupedSections[q.testSection].questions.push(q);
-        });
-
-        const sectionsArray = Object.values(groupedSections);
-
-        // Group tests into verbal and abstract categories
-        const verbalTests = sectionsArray
-          .map((section) => section.testSection)
-          .filter((test) => test.toLowerCase().includes("verbal"));
-        const abstractTests = sectionsArray
-          .map((section) => section.testSection)
-          .filter((test) => test.toLowerCase().includes("abstract"));
-
-        setSections(sectionsArray);
+      .then((data: string[]) => {
+        const verbalTests = data.filter((test) => test.toLowerCase().includes("verbal"));
+        const abstractTests = data.filter((test) => test.toLowerCase().includes("abstract"));
         setAvailableTests({ verbal: verbalTests, abstract: abstractTests });
         setLoading(false);
       })
       .catch((err) => {
-        console.error("Failed to fetch questions", err);
+        console.error("Failed to fetch metadata", err);
         setLoading(false);
       });
   }, []);
 
   const handleCategorySelection = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedCategory(event.target.value);
-    setSelectedTest(""); // Reset the selected test when category changes
+    setSelectedTest("");
+    setSections([]); // Clear previous results
   };
 
   const handleTestSelection = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedTest(event.target.value);
+    const testName = event.target.value;
+    setSelectedTest(testName);
+
+    if (testName) {
+      setLoading(true);
+      fetch(`/api/questions?section=${encodeURIComponent(testName)}`)
+        .then(res => res.json())
+        .then(data => {
+          const section: Section = {
+            testSection: testName,
+            questions: data
+          };
+          setSections([section]);
+          setLoading(false);
+        })
+        .catch(err => {
+          console.error("Failed to fetch section questions", err);
+          setLoading(false);
+        });
+    }
   };
 
   return (
-    <div className="bg-white min-h-screen p-4 md:p-6 w-full">
-      <h1 className="text-3xl font-bold text-green-700 mb-6 text-center">Question Bank</h1>
-      {loading ? (
-        <p className="text-gray-700 text-center">Loading questions...</p>
-      ) : (
-        <div className="max-w-4xl mx-auto">
-          {/* Category Selection */}
-          <div className="mb-6">
-            <label
-              htmlFor="category-select"
-              className="block text-lg font-medium text-gray-700 mb-2"
-            >
-              Select a Category:
+    <div className="w-full max-w-5xl mx-auto px-6 py-16 md:py-24 min-h-screen">
+      <div className="text-center mb-20 animate-in fade-in slide-in-from-bottom-4 duration-700">
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          Preparation <span className="text-brand-500">Resource Bank</span>
+        </h1>
+        <p className="text-text-secondary max-w-2xl mx-auto text-base md:text-lg">
+          Master the NHEF scholarship application with our curated archive of past examination questions and expert logic.
+        </p>
+      </div>
+
+      <div className="space-y-16">
+        {/* Filter Area - Always visible for UX consistency */}
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="glass p-8 rounded-lg border-white/5 shadow-sm">
+            <label htmlFor="category-select" className="block text-[10px] font-bold text-brand-500 uppercase tracking-[0.2em] mb-4">
+              Step 1: Focus Area
             </label>
             <select
               id="category-select"
               value={selectedCategory}
               onChange={handleCategorySelection}
-              className="w-full p-2 border border-gray-300 rounded-md bg-white text-gray-800"
+              className="w-full bg-surface-200 border border-white/10 rounded-md px-4 py-3 text-text-primary text-sm focus:ring-1 focus:ring-brand-500 outline-none transition-all cursor-pointer"
             >
-              <option value="">-- Select a Category --</option>
-              <option value="verbal">Verbal Reasoning Tests</option>
-              <option value="abstract">Abstract Reasoning Tests</option>
+              <option value="">Select Category</option>
+              <option value="verbal">Verbal Reasoning</option>
+              <option value="abstract">Abstract Reasoning</option>
             </select>
           </div>
 
-          {/* Test Selection */}
-          {selectedCategory && (
-            <div className="mb-6">
-              <label
-                htmlFor="test-select"
-                className="block text-lg font-medium text-gray-700 mb-2"
-              >
-                Select a Test:
-              </label>
-              <select
-                id="test-select"
-                value={selectedTest}
-                onChange={handleTestSelection}
-                className="w-full p-2 border border-gray-300 rounded-md bg-white text-gray-800"
-              >
-                <option value="">-- Select a Test --</option>
-                {availableTests[selectedCategory].map((test, idx) => (
-                  <option key={idx} value={test}>
-                    {test}
-                  </option>
-                ))}
-              </select>
-            </div>
-          )}
+          <div className={`glass p-8 rounded-lg border-white/5 shadow-sm transition-opacity duration-300 ${!selectedCategory ? 'opacity-40 pointer-events-none' : 'opacity-100'}`}>
+            <label htmlFor="test-select" className="block text-[10px] font-bold text-brand-500 uppercase tracking-[0.2em] mb-4">
+              Step 2: Specific Test
+            </label>
+            <select
+              id="test-select"
+              value={selectedTest}
+              onChange={handleTestSelection}
+              disabled={!selectedCategory}
+              className="w-full bg-surface-200 border border-white/10 rounded-md px-4 py-3 text-text-primary text-sm focus:ring-1 focus:ring-brand-500 outline-none transition-all cursor-pointer"
+            >
+              <option value="">Select Examination</option>
+              {selectedCategory && availableTests[selectedCategory].map((test, idx) => (
+                <option key={idx} value={test}>
+                  {test}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
 
-          {/* Display questions for the selected test */}
-          {selectedTest ? (
-            sections
+        {loading ? (
+          /* Skeleton Loader */
+          <div className="space-y-10">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="glass p-10 rounded-lg border-white/5 animate-pulse">
+                <div className="flex items-start gap-8">
+                  <div className="w-10 h-10 rounded-md bg-white/5 shrink-0" />
+                  <div className="flex-grow space-y-6">
+                    <div className="h-6 bg-white/5 rounded-md w-3/4" />
+                    <div className="h-20 bg-white/5 rounded-md w-full" />
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="h-12 bg-white/5 rounded-md" />
+                      <div className="h-12 bg-white/5 rounded-md" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : selectedTest ? (
+          <div className="space-y-10 animate-in fade-in duration-700">
+            <div className="flex items-center gap-6 mb-12">
+              <h2 className="text-xs font-bold text-text-muted uppercase tracking-[0.3em] whitespace-nowrap bg-white/5 px-5 py-1.5 rounded-full border border-white/5">
+                Current Section: {selectedTest}
+              </h2>
+              <div className="h-px flex-grow bg-white/5"></div>
+            </div>
+
+            {sections
               .filter((section) => section.testSection === selectedTest)
-              .map((section, sectionIdx) => (
-                <div key={sectionIdx} className="bg-white rounded-lg shadow-md p-4 md:p-6 mb-6">
-                  <h2 className="text-lg md:text-xl font-bold text-blue-700 mb-2">{section.testSection}</h2>
-                  {section.questions.map((q) => (
-                    <div key={q._id} className="mb-4">
-                      {/* Render passage if it exists */}
-                      {q.passage && (
-                        <blockquote className="italic bg-gray-200 p-3 md:p-4 rounded mb-4 text-gray-800">
-                          {q.passage}
-                        </blockquote>
-                      )}
-                      {/* Render image if it exists */}
-                      {q.image && (
-                        <div className="w-full h-auto mb-4 relative">
-                          <Image
-                            src={q.image}
-                            alt={`Question ${q.number}`}
-                            width={500}
-                            height={300}
-                            layout="responsive"
-                            className="rounded-md"
-                          />
+              .map((section) => (
+                <div key={section.testSection} className="space-y-8">
+                  {section.questions.map((q, qIdx) => (
+                    <div key={q._id} className="glass p-10 md:p-12 rounded-lg border-white/5 hover:border-brand-500/10 transition-all hover:bg-white/[0.01] shadow-sm group">
+                      <div className="flex flex-col md:flex-row items-start gap-8">
+                        <div className="w-10 h-10 rounded-md bg-brand-500/5 border border-brand-500/10 flex items-center justify-center font-bold text-brand-500 shrink-0 text-sm">
+                          {qIdx + 1}
                         </div>
-                      )}
-                      <p className="font-semibold text-gray-800">{q.content}</p>
-                      <ul className="list-disc pl-5 mt-2">
-                        {q.options.map((option, idx) => (
-                          <li key={idx} className="text-gray-700">{option}</li>
-                        ))}
-                      </ul>
-                      <p className="text-green-600 font-medium mt-2">Answer: {q.answer}</p>
-                      {/* Render rules if they exist */}
-                      {q.rules && (
-                        <div className="mt-2 text-gray-600">
-                          <strong>Rules:</strong>
-                          <ul className="list-disc pl-5">
-                            {q.rules.map((rule, idx) => (
-                              <li key={idx}>{rule}</li>
+
+                        <div className="flex-grow space-y-8">
+                          <p className="text-xl font-bold text-white leading-relaxed">
+                            {q.content}
+                          </p>
+
+                          {q.passage && (
+                            <div className="bg-surface-300/30 p-6 rounded-md border-l-2 border-brand-500 text-text-secondary text-sm leading-relaxed font-normal">
+                              {q.passage}
+                            </div>
+                          )}
+
+                          {q.image && (
+                            <div className="relative w-full max-w-2xl overflow-hidden rounded-md border border-white/5 bg-white/[0.02] p-2">
+                              <Image
+                                src={q.image}
+                                alt={`Evaluation Visual ${q.number}`}
+                                width={800}
+                                height={450}
+                                layout="responsive"
+                                className="rounded-sm"
+                              />
+                            </div>
+                          )}
+
+                          <div className="grid sm:grid-cols-2 gap-4">
+                            {q.options.map((option, idx) => (
+                              <div key={idx} className="flex items-center gap-4 p-4 rounded-md bg-white/[0.02] border border-white/5 text-text-secondary transition-colors group-hover:border-white/10 text-sm">
+                                <span className="w-6 h-6 rounded bg-white/5 flex items-center justify-center font-mono text-[10px] uppercase text-text-muted">{String.fromCharCode(65 + idx)}</span>
+                                <span>{option}</span>
+                              </div>
                             ))}
-                          </ul>
+                          </div>
+
+                          <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 pt-6 border-t border-white/5">
+                            <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-md bg-brand-500/5 border border-brand-500/10">
+                              <span className="text-[10px] font-bold text-brand-500 uppercase tracking-widest">Answer</span>
+                              <span className="font-bold text-white text-sm">{q.answer}</span>
+                            </div>
+
+                            {q.explanation && (
+                              <div className="flex-1 md:max-w-md">
+                                <p className="text-[10px] font-bold text-text-muted uppercase tracking-widest mb-1.5 underline decoration-brand-500/30">Logic Basis</p>
+                                <p className="text-sm text-text-secondary leading-relaxed font-normal italic">
+                                  {q.explanation}
+                                </p>
+                              </div>
+                            )}
+                          </div>
                         </div>
-                      )}
-                      {q.explanation && (
-                        <p className="text-gray-600 mt-2 italic">Explanation: {q.explanation}</p>
-                      )}
+                      </div>
                     </div>
                   ))}
                 </div>
-              ))
-          ) : (
-            <p className="text-gray-700 text-center">Please select a test to view questions.</p>
-          )}
-        </div>
-      )}
+              ))}
+          </div>
+        ) : (
+          <div className="glass p-24 rounded-lg text-center border-dashed border-white/5 border-[1px] opacity-60">
+            <h3 className="text-lg font-semibold text-text-muted mb-3">Resource Vault Empty</h3>
+            <p className="text-sm text-text-muted max-w-xs mx-auto">Select a category and examination from the navigation above to browse the preparation hub.</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
+

@@ -44,4 +44,4 @@ const QuestionSchema = new mongoose.Schema({
   } // Table for numerical questions
 });
 
-export default mongoose.models.Question || mongoose.model('Question', QuestionSchema);
+export default mongoose.models.Question || mongoose.model('Question', QuestionSchema, 'questions');

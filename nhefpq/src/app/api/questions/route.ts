@@ -1,36 +1,43 @@
 import { NextResponse } from "next/server";
-import { MongoClient } from "mongodb";
-
-const uri = process.env.MONGODB_URI || "";
-const client = new MongoClient(uri);
+import dbConnect from "@/lib/dbConnect";
+import Question from "@/models/Question";
 
 export async function GET(req: Request) {
   try {
-    await client.connect();
-    const db = client.db("nhef_questions_db"); // Database name
-    const collection = db.collection("questions"); // Collection name
+    await dbConnect();
 
-    // Extract query parameters (e.g., ?type=numerical)
+    // Extract query parameters (e.g., ?type=verbal or ?metadata=true)
     const { searchParams } = new URL(req.url);
-    const type = searchParams.get("type"); // Get type of question
+    const type = searchParams.get("type");
+    const metadata = searchParams.get("metadata");
+    const sectionName = searchParams.get("section");
 
-    // Define query filter
-    let query = {};
-    if (type === "verbal") {
-      query = { testSection: { $regex: /verbal/i } }; // Matches "Verbal Reasoning Test"
-    } else if (type === "abstract") {
-      query = { testSection: { $regex: /abstract/i } }; // Matches "Abstract Reasoning Test"
-    } else if (type === "numerical") {
-      query = { testSection: { $regex: /numerical/i } }; // Matches "Numerical Reasoning Test"
+    if (metadata === "true") {
+      const sections = await Question.distinct("testSection");
+      return NextResponse.json(sections);
     }
 
-    const questions = await collection.find(query).toArray();
+    // Define query filter
+    let query: any = {};
+    if (sectionName) {
+      query = { testSection: sectionName };
+    } else if (type === "verbal") {
+      query = { testSection: { $regex: /verbal/i } };
+    } else if (type === "abstract") {
+      query = { testSection: { $regex: /abstract/i } };
+    } else if (type === "numerical") {
+      query = { testSection: { $regex: /numerical/i } };
+    }
+
+    const questions = await Question.find(query).lean();
+    console.log(`Fetched ${questions.length} questions for query:`, query);
 
     return NextResponse.json(questions);
   } catch (error) {
     console.error("Error fetching questions:", error);
+
     return NextResponse.json(
-      { error: "Failed to fetch questions" },
+      { error: "Failed to fetch questions. Make sure MONGODB_URI is set." },
       { status: 500 }
     );
   }

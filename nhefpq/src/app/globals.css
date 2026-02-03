@@ -1,14 +1,84 @@
 @import "tailwindcss";
 
+@theme {
+  --color-surface-100: #0a0f1a;
+  --color-surface-200: #111827;
+  --color-surface-300: #1f2937;
+
+  --color-brand-400: #34d399;
+  --color-brand-500: #10b981;
+  --color-brand-600: #059669;
+
+  --color-text-primary: #f9fafb;
+  --color-text-secondary: #9ca3af;
+  --color-text-muted: #6b7280;
+
+  --color-border-subtle: rgba(255, 255, 255, 0.05);
+  --color-border-base: rgba(255, 255, 255, 0.1);
+  --color-border-highlight: rgba(16, 185, 129, 0.2);
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-h3: 1.875rem;
+  --font-size-h2: 2.25rem;
+  --font-size-h1: 3.5rem;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-base: 200ms var(--ease-expo);
+}
+
 :root {
-  --background: #000000; /* Black background */
-  --text-color: #e5e5e5; /* Light gray text */
-  --heading-color: #10b981; /* Vibrant green for headings */
-  --navbar-bg: #064e3b; /* Dark green for navbar and footer */
+  --background: var(--color-surface-100);
+  --foreground: var(--color-text-primary);
 }
 
 body {
-  background: var(--background);
-  color: var(--text-color);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-surface-100);
+  background-image:
+    radial-gradient(circle at top center, rgba(31, 41, 55, 0.4) 0%, transparent 70%),
+    radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.06) 0%, transparent 50%);
+  color: var(--color-text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.glass {
+  background: rgba(31, 41, 55, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.text-gradient {
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.8) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand-gradient {
+  background: linear-gradient(135deg, var(--color-brand-400) 0%, var(--color-brand-600) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hover-lift {
+  transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-brand-500);
+  box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.2);
 }

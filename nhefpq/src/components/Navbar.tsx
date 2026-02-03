@@ -12,59 +12,84 @@ export default function Navbar() {
   };
 
   return (
-    <header className="bg-[var(--navbar-bg)] shadow">
-      <nav className="container mx-auto p-4 flex justify-between items-center">
-        <div className="font-bold text-xl text-white">NHEF-PQ App</div>
-        <div className="md:hidden">
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="text-white focus:outline-none"
-          >
-            ☰
-          </button>
-        </div>
-        <div
-          className={`absolute top-16 left-0 w-full bg-[var(--navbar-bg)] text-white flex flex-col space-y-4 p-4 md:static md:flex-row md:space-x-6 md:p-0 md:w-auto ${
-            menuOpen ? "block" : "hidden"
-          } md:block`}
-        >
-          <Link
-            href="/"
-            className={`hover:text-gray-300 ${
-              pathname === "/" ? "text-green-300" : ""
-            }`}
-            onClick={handleLinkClick}
-          >
-            Home
-          </Link>
-          <Link
-            href="/question-bank"
-            className={`hover:text-gray-300 ${
-              pathname === "/question-bank" ? "text-green-300" : ""
-            }`}
-            onClick={handleLinkClick}
-          >
-            Question Bank
-          </Link>
-          <Link
-            href="/practice"
-            className={`hover:text-gray-300 ${
-              pathname === "/practice" ? "text-green-300" : ""
-            }`}
-            onClick={handleLinkClick}
-          >
-            Practice Mode
-          </Link>
+    <header className="sticky top-0 z-50 w-full glass border-b border-white/5 bg-slate-950/50 backdrop-blur-xl">
+      <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
+        <Link href="/" className="flex items-center space-x-3 group">
+          <div className="w-9 h-9 brand-gradient rounded-md flex items-center justify-center font-bold text-white shadow-sm transition-transform group-hover:scale-105">
+            N
+          </div>
+          <span className="font-bold text-lg tracking-tight text-white hover:text-brand-500 transition-colors">
+            NHEF<span className="text-brand-500"> PQ</span>
+          </span>
+        </Link>
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center space-x-8">
+          {[
+            { name: "Home", path: "/" },
+            { name: "Question Bank", path: "/question-bank" },
+            { name: "Practice Mode", path: "/practice" },
+          ].map((link) => (
+            <Link
+              key={link.path}
+              href={link.path}
+              className={`text-sm font-medium transition-colors hover:text-emerald-400 ${pathname === link.path ? "text-emerald-400" : "text-gray-300"
+                }`}
+            >
+              {link.name}
+            </Link>
+          ))}
           <a
             href="https://www.youtube.com/@DevMarkson"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-gray-300"
+            className="px-5 py-2 bg-brand-500 hover:bg-brand-600 text-white text-sm font-semibold rounded-md transition-all active:scale-[0.98] shadow-sm"
           >
-            Please subscribe to my YouTube 🙏
+            YouTube
           </a>
         </div>
+
+        {/* Mobile Toggle */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="p-2 text-gray-300 hover:text-white transition-colors"
+          >
+            {menuOpen ? "✕" : "☰"}
+          </button>
+        </div>
+
+        {/* Mobile Menu Overlay */}
+        {menuOpen && (
+          <div className="absolute top-full left-0 w-full glass bg-slate-900/95 border-b border-white/5 flex flex-col p-6 space-y-4 md:hidden animate-in fade-in slide-in-from-top-4 duration-200">
+            {[
+              { name: "Home", path: "/" },
+              { name: "Question Bank", path: "/question-bank" },
+              { name: "Practice Mode", path: "/practice" },
+            ].map((link) => (
+              <Link
+                key={link.path}
+                href={link.path}
+                className={`text-lg font-medium ${pathname === link.path ? "text-emerald-400" : "text-gray-300"
+                  }`}
+                onClick={handleLinkClick}
+              >
+                {link.name}
+              </Link>
+            ))}
+            <a
+              href="https://www.youtube.com/@DevMarkson"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full text-center px-4 py-3 bg-brand-500 text-white font-semibold rounded-md"
+              onClick={handleLinkClick}
+            >
+              Get Started
+            </a>
+          </div>
+        )}
       </nav>
     </header>
   );
 }
+

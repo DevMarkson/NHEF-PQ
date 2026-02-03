@@ -21,7 +21,10 @@ async function dbConnect(): Promise<Connection> {
   if (!cached.promise) {
     cached.promise = mongoose.connect(MONGODB_URI!, {  // Adding `!` ensures TypeScript treats it as a string
       bufferCommands: false,
-    }).then((mongoose) => mongoose.connection);
+    }).then((mongoose) => {
+      console.log("✅ MongoDB Connected successfully to:", MONGODB_URI?.split("@")[1]); // Log host only for privacy
+      return mongoose.connection;
+    });
   }
 
   cached.conn = await cached.promise;
