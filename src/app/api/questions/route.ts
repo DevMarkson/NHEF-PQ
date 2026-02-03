@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { FilterQuery } from "mongoose";
 import dbConnect from "@/lib/dbConnect";
 import Question from "@/models/Question";
 
@@ -18,7 +19,7 @@ export async function GET(req: Request) {
     }
 
     // Define query filter
-    let query: Record<string, any> = {};
+    let query: FilterQuery<unknown> = {};
     if (sectionName) {
       query = { testSection: sectionName };
     } else if (type === "verbal") {
