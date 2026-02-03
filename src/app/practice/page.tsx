@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 interface Question {
   _id: string;
@@ -163,9 +164,11 @@ export default function PracticeMode() {
             {/* Image for Abstract */}
             {currentQuestion.image && (
               <div className="mb-12 flex justify-center p-6 bg-white/[0.02] rounded-md border border-white/5">
-                <img
+                <Image
                   src={currentQuestion.image}
                   alt={`Question Visualization ${currentQuestion.number}`}
+                  width={320}
+                  height={320}
                   className="max-h-[320px] object-contain rounded-sm"
                 />
               </div>
@@ -223,7 +226,7 @@ export default function PracticeMode() {
 
                   {currentQuestion.explanation && (
                     <p className="text-text-secondary leading-relaxed text-sm font-normal italic">
-                      "{currentQuestion.explanation}"
+                      &quot;{currentQuestion.explanation}&quot;
                     </p>
                   )}
 

@@ -18,7 +18,7 @@ export async function GET(req: Request) {
     }
 
     // Define query filter
-    let query: any = {};
+    let query: Record<string, any> = {};
     if (sectionName) {
       query = { testSection: sectionName };
     } else if (type === "verbal") {
