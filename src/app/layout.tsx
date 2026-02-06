@@ -6,6 +6,10 @@ import { Analytics } from "@vercel/analytics/react"
 export const metadata: Metadata = {
   title: "NHEF-PQ App",
   description: "Past question bank and practice app for NHEF-PQ",
+  icons: {
+    icon: "/n-logo.svg",
+    apple: "/n-logo.svg",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -21,7 +25,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <footer className="w-full py-16 px-6 border-t border-white/5 bg-surface-200">
           <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-brand-500 rounded-md flex items-center justify-center font-bold text-white text-xs">N</div>
+              <img
+                src="/n-logo.svg"
+                alt="N Logo"
+                className="w-8 h-8 rounded-md shadow-sm"
+              />
               <span className="font-bold text-white tracking-tight">NHEF PQ</span>
             </div>
 
