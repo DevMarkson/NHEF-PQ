@@ -22,7 +22,9 @@ async function dbConnect(): Promise<Connection> {
     cached.promise = mongoose.connect(MONGODB_URI!, {  // Adding `!` ensures TypeScript treats it as a string
       bufferCommands: false,
     }).then((mongoose) => {
-      console.log("✅ MongoDB Connected successfully to:", MONGODB_URI?.split("@")[1]); // Log host only for privacy
+      const dbName = mongoose.connection.name;
+      const host = mongoose.connection.host;
+      console.log(`✅ MongoDB Connected to: ${host} | Database: ${dbName}`);
       return mongoose.connection;
     });
   }

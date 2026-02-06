@@ -167,13 +167,20 @@ export default function QuestionBank() {
                         </div>
 
                         <div className="flex-grow space-y-8">
-                          <p className="text-xl font-bold text-white leading-relaxed">
-                            {q.content}
-                          </p>
+                          <div className="space-y-4">
+                            <h3 className="text-xl md:text-2xl font-bold text-white leading-tight tracking-tight">
+                              {q.content}
+                            </h3>
+                          </div>
 
                           {q.passage && (
-                            <div className="bg-surface-300/30 p-6 rounded-md border-l-2 border-brand-500 text-text-secondary text-sm leading-relaxed font-normal">
-                              {q.passage}
+                            <div className="bg-surface-300/40 p-8 rounded-lg border-l-4 border-brand-500 text-text-primary text-base md:text-lg leading-loose font-normal shadow-inner backdrop-blur-sm mt-8">
+                              <span className="block text-[10px] font-bold text-brand-500 uppercase tracking-[0.2em] mb-4 opacity-70">Comprehension Passage:</span>
+                              <div className="space-y-4">
+                                {q.passage.split('\n').map((para, i) => (
+                                  <p key={i}>{para}</p>
+                                ))}
+                              </div>
                             </div>
                           )}
 
