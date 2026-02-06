@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Analytics } from "@vercel/analytics/react"
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "NHEF-PQ App",
@@ -25,10 +26,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <footer className="w-full py-16 px-6 border-t border-white/5 bg-surface-200">
           <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
             <div className="flex items-center space-x-3">
-              <img
+              <Image
                 src="/n-logo.svg"
                 alt="N Logo"
-                className="w-8 h-8 rounded-md shadow-sm"
+                width={32}
+                height={32}
+                className="rounded-md shadow-sm"
               />
               <span className="font-bold text-white tracking-tight">NHEF PQ</span>
             </div>

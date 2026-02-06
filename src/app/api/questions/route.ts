@@ -34,13 +34,14 @@ export async function GET(req: Request) {
     console.log(`Fetched ${questions.length} questions for query:`, query);
 
     return NextResponse.json(questions);
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : "Unknown error";
     console.error("Error fetching questions:", error);
 
     return NextResponse.json(
       {
         error: "Failed to fetch questions.",
-        details: error?.message || "Unknown error",
+        details: errorMessage,
         hint: "Verify MONGODB_URI in Vercel Environment Variables and check MongoDB Atlas IP Whitelist (0.0.0.0/0)."
       },
       { status: 500 }

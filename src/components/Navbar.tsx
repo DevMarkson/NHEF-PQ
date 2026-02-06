@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,10 +16,12 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full glass border-b border-white/5 bg-slate-950/50 backdrop-blur-xl">
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center space-x-3 group">
-          <img
+          <Image
             src="/n-logo.svg"
             alt="N Logo"
-            className="w-9 h-9 rounded-md shadow-sm transition-transform group-hover:scale-105"
+            width={36}
+            height={36}
+            className="rounded-md shadow-sm transition-transform group-hover:scale-105"
           />
           <span className="font-bold text-lg tracking-tight text-white hover:text-brand-500 transition-colors">
             NHEF<span className="text-brand-500"> PQ</span>

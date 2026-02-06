@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, useMemo, useCallback } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 
 interface Question {
@@ -18,7 +18,6 @@ interface Question {
 export default function PracticeMode() {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [availableTests, setAvailableTests] = useState<{ [key: string]: string[] }>({
     verbal: [],
@@ -31,17 +30,49 @@ export default function PracticeMode() {
   const [isActive, setIsActive] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
 
+  const formatTime = (seconds: number) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
+  };
+
+  const handleSelectAnswer = useCallback((option: string) => {
+    if (userAnswers[currentQuestionIndex]) return;
+
+    setUserAnswers(prev => ({ ...prev, [currentQuestionIndex]: option }));
+  }, [currentQuestionIndex, userAnswers]);
+
+  const jumpToQuestion = useCallback((index: number) => {
+    setCurrentQuestionIndex(index);
+  }, []);
+
+  const handleNext = useCallback(() => {
+    if (currentQuestionIndex < questions.length - 1) {
+      const nextIdx = currentQuestionIndex + 1;
+      setCurrentQuestionIndex(nextIdx);
+    }
+  }, [currentQuestionIndex, questions.length]);
+
+  const handlePrev = useCallback(() => {
+    if (currentQuestionIndex > 0) {
+      const prevIdx = currentQuestionIndex - 1;
+      setCurrentQuestionIndex(prevIdx);
+    }
+  }, [currentQuestionIndex]);
+
   // Timer logic
   useEffect(() => {
-    let interval: any = null;
+    let interval: ReturnType<typeof setInterval> | null = null;
     if (isActive && !isFinished) {
       interval = setInterval(() => {
         setTimer((prev) => prev + 1);
       }, 1000);
-    } else {
+    } else if (interval) {
       clearInterval(interval);
     }
-    return () => clearInterval(interval);
+    return () => {
+      if (interval) clearInterval(interval);
+    };
   }, [isActive, isFinished]);
 
   // Keyboard shortcuts
@@ -65,41 +96,7 @@ export default function PracticeMode() {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [questions, currentQuestionIndex, selectedTest, isFinished]);
-
-  const formatTime = (seconds: number) => {
-    const mins = Math.floor(seconds / 60);
-    const secs = seconds % 60;
-    return `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
-  };
-
-  const handleSelectAnswer = (option: string) => {
-    if (userAnswers[currentQuestionIndex]) return; // Only allow initial answer for "instant feedback" mode
-
-    setUserAnswers(prev => ({ ...prev, [currentQuestionIndex]: option }));
-    setSelectedAnswer(option);
-  };
-
-  const jumpToQuestion = (index: number) => {
-    setCurrentQuestionIndex(index);
-    setSelectedAnswer(userAnswers[index] || null);
-  };
-
-  const handleNext = () => {
-    if (currentQuestionIndex < questions.length - 1) {
-      const nextIdx = currentQuestionIndex + 1;
-      setCurrentQuestionIndex(nextIdx);
-      setSelectedAnswer(userAnswers[nextIdx] || null);
-    }
-  };
-
-  const handlePrev = () => {
-    if (currentQuestionIndex > 0) {
-      const prevIdx = currentQuestionIndex - 1;
-      setCurrentQuestionIndex(prevIdx);
-      setSelectedAnswer(userAnswers[prevIdx] || null);
-    }
-  };
+  }, [questions, currentQuestionIndex, selectedTest, isFinished, handleSelectAnswer, handleNext, handlePrev]);
 
   const finishSession = () => {
     setIsFinished(true);
@@ -108,7 +105,6 @@ export default function PracticeMode() {
 
   const restartSession = () => {
     setCurrentQuestionIndex(0);
-    setSelectedAnswer(null);
     setUserAnswers({});
     setTimer(0);
     setIsActive(true);
@@ -135,7 +131,6 @@ export default function PracticeMode() {
     setSelectedCategory(event.target.value);
     setSelectedTest("");
     setCurrentQuestionIndex(0);
-    setSelectedAnswer(null);
     setQuestions([]);
   };
 
@@ -143,7 +138,6 @@ export default function PracticeMode() {
     const testName = event.target.value;
     setSelectedTest(testName);
     setCurrentQuestionIndex(0);
-    setSelectedAnswer(null);
 
     if (testName) {
       setLoading(true);
