@@ -2,8 +2,8 @@ import 'dotenv/config';
 // src/scripts/seed.ts
 import fs from 'fs';
 import path from 'path';
-import dbConnect from '../../../lib/dbConnect.ts';
-import Question from '../../../models/Question.ts';
+import dbConnect from '../../../lib/dbConnect';
+import Question from '../../../models/Question';
 
 async function seedData() {
   await dbConnect();
