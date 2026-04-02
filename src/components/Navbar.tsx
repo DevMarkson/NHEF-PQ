@@ -45,12 +45,12 @@ export default function Navbar() {
             </Link>
           ))}
           <a
-            href="https://www.youtube.com/@DevMarkson"
+            href="https://www.youtube.com/watch?v=hhEamn4XlFw&t=223s"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2 bg-brand-500 hover:bg-brand-600 text-white text-sm font-semibold rounded-md transition-all active:scale-[0.98] shadow-sm"
+            className="px-5 py-2 bg-brand-500 hover:bg-brand-600 text-white text-sm font-semibold rounded-md transition-all active:scale-[0.98] shadow-sm text-center"
           >
-            YouTube
+            Video Guide
           </a>
         </div>
 
@@ -94,7 +94,7 @@ export default function Navbar() {
             <div className="pt-8 border-t border-white/10 space-y-6">
               <span className="text-[10px] font-bold text-brand-500 uppercase tracking-widest opacity-50">Community</span>
               <a
-                href="https://www.youtube.com/@DevMarkson"
+                href="https://www.youtube.com/watch?v=hhEamn4XlFw&t=223s"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-full px-4 py-4 bg-brand-500 hover:bg-brand-600 text-white font-bold rounded-lg transition-all shadow-lg shadow-brand-500/20"

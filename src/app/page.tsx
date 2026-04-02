@@ -39,7 +39,7 @@ export default function Home() {
             <iframe
               width="100%"
               height="100%"
-              src="https://www.youtube.com/embed/hhEamn4XlFw?start=224"
+              src="https://www.youtube.com/embed/hhEamn4XlFw?start=223"
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -60,7 +60,7 @@ export default function Home() {
                 Watch this guide by <span className="text-white font-semibold">NHEF UI Scholars 2025</span> that focuses on preparing effectively for the NHEF aptitude test, breaking down the structure, expectations, and practical strategies needed to perform well.
               </p>
               <a
-                href="https://www.youtube.com/watch?v=hhEamn4XlFw&t=224s"
+                href="https://www.youtube.com/watch?v=hhEamn4XlFw&t=223s"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-brand-500 font-semibold text-sm hover:underline"
