@@ -27,6 +27,7 @@ export default function QuestionBank() {
   const [availableTests, setAvailableTests] = useState<{ [key: string]: string[] }>({
     verbal: [],
     abstract: [],
+    numerical: [],
   });
   const [selectedCategory, setSelectedCategory] = useState<string>("");
   const [selectedTest, setSelectedTest] = useState<string>("");
@@ -38,7 +39,8 @@ export default function QuestionBank() {
       .then((data: string[]) => {
         const verbalTests = data.filter((test) => test.toLowerCase().includes("verbal"));
         const abstractTests = data.filter((test) => test.toLowerCase().includes("abstract"));
-        setAvailableTests({ verbal: verbalTests, abstract: abstractTests });
+        const numericalTests = data.filter((test) => test.toLowerCase().includes("numerical"));
+        setAvailableTests({ verbal: verbalTests, abstract: abstractTests, numerical: numericalTests });
         setLoading(false);
       })
       .catch((err) => {
@@ -83,7 +85,7 @@ export default function QuestionBank() {
           Preparation <span className="text-brand-500">Resource Bank</span>
         </h1>
         <p className="text-text-secondary max-w-2xl mx-auto text-base md:text-lg">
-          Master the NHEF scholarship application with our curated archive of past examination questions and expert logic.
+          Master the NHEF scholarship application with our curated archive of examination questions.
         </p>
       </div>
 
@@ -103,6 +105,7 @@ export default function QuestionBank() {
               <option value="">Select Category</option>
               <option value="verbal">Verbal Reasoning</option>
               <option value="abstract">Abstract Reasoning</option>
+              <option value="numerical">Numerical Reasoning</option>
             </select>
           </div>
 

@@ -55,42 +55,54 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Toggle */}
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="p-2 text-gray-300 hover:text-white transition-colors"
+            className="p-2.5 text-white bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 transition-all focus:outline-none active:scale-95"
+            aria-label="Toggle Menu"
           >
-            {menuOpen ? "✕" : "☰"}
+            {menuOpen ? (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+            )}
           </button>
         </div>
 
         {/* Mobile Menu Overlay */}
         {menuOpen && (
-          <div className="absolute top-full left-0 w-full glass bg-slate-900/95 border-b border-white/5 flex flex-col p-6 space-y-4 md:hidden animate-in fade-in slide-in-from-top-4 duration-200">
-            {[
-              { name: "Home", path: "/" },
-              { name: "Question Bank", path: "/question-bank" },
-              { name: "Practice Mode", path: "/practice" },
-            ].map((link) => (
-              <Link
-                key={link.path}
-                href={link.path}
-                className={`text-lg font-medium ${pathname === link.path ? "text-emerald-400" : "text-gray-300"
-                  }`}
+          <div className="fixed top-[73px] left-0 w-full h-[calc(100vh-73px)] bg-slate-950 border-b border-white/5 flex flex-col p-8 space-y-8 md:hidden animate-in fade-in slide-in-from-top-4 duration-300 z-50 overflow-y-auto">
+            <div className="flex flex-col space-y-6">
+              <span className="text-[10px] font-bold text-brand-500 uppercase tracking-widest opacity-50">Navigation</span>
+              {[
+                { name: "Home", path: "/" },
+                { name: "Question Bank", path: "/question-bank" },
+                { name: "Practice Mode", path: "/practice" },
+              ].map((link) => (
+                <Link
+                  key={link.path}
+                  href={link.path}
+                  className={`text-2xl font-bold tracking-tight transition-colors ${pathname === link.path ? "text-emerald-400" : "text-white"
+                    }`}
+                  onClick={handleLinkClick}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+
+            <div className="pt-8 border-t border-white/10 space-y-6">
+              <span className="text-[10px] font-bold text-brand-500 uppercase tracking-widest opacity-50">Community</span>
+              <a
+                href="https://www.youtube.com/@DevMarkson"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-full px-4 py-4 bg-brand-500 hover:bg-brand-600 text-white font-bold rounded-lg transition-all shadow-lg shadow-brand-500/20"
                 onClick={handleLinkClick}
               >
-                {link.name}
-              </Link>
-            ))}
-            <a
-              href="https://www.youtube.com/@DevMarkson"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full text-center px-4 py-3 bg-brand-500 text-white font-semibold rounded-md"
-              onClick={handleLinkClick}
-            >
-              Get Started
-            </a>
+                Watch Assessment Guide
+              </a>
+            </div>
           </div>
         )}
       </nav>

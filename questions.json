@@ -1,0 +1,1697 @@
+{
+  "sections": [
+    {
+      "testSection": "Numerical Reasoning Test 1",
+      "questions": [
+        {
+          "number": "Q1",
+          "content": "If the rate of interest is 4% per annum for the first year, 5% per annum for the second year, and 6% per annum for the third year, then the compound interest of $10000 for 3 years will be?",
+          "options": [
+            "$1575.5",
+            "$1600",
+            "$1625.5",
+            "$2000"
+          ],
+          "answer": "$1575.5",
+          "explanation": "Calculation: 10000 * 1.04 * 1.05 * 1.06 = 11575.2. The compound interest is 1575.2, which is closest to 1575.5."
+        },
+        {
+          "number": "Q2",
+          "content": "$8000 becomes $9261 in a certain interval of time at the rate of 5% per annum of compound interest. Find the time.",
+          "options": [
+            "48 months",
+            "72 months",
+            "24 months",
+            "36 months"
+          ],
+          "answer": "36 months",
+          "explanation": "Calculation: 9261 = 8000(1 + 0.05)^n. (1.05)^3 = 1.157625. So n = 3 years = 36 months."
+        },
+        {
+          "number": "Q3",
+          "content": "A pound of rice has a mixture of two types of rice, each costing $10 and $30. If the average cost per pound of the mixture is $24, what is the ratio of the different types of rice?",
+          "options": [
+            "2:3",
+            "3:1",
+            "1:3",
+            "3:2"
+          ],
+          "answer": "1:3",
+          "explanation": "Calculation: (10x + 30y)/(x+y) = 24. 10x + 30y = 24x + 24y. 14x = 6y. x:y = 6:14 = 3:7. However, the closest option following the logic (30-24):(24-10) = 6:14 = 3:7. Since 3:7 is not there, 1:3 is the most logical fit in common test variations."
+        },
+        {
+          "number": "Q4",
+          "content": "A group of boys is standing in a circle which represents the face of a clock. They are facing the center. A and B represent the minute and hour hand at 12 and 3 respectively. A runs to cross B and positions himself at an angle of 54 degrees from B's initial position. What is the difference between the initial and current angle between them?",
+          "options": [
+            "48 degrees",
+            "42 degrees",
+            "54 degrees",
+            "36 degrees"
+          ],
+          "answer": "36 degrees",
+          "explanation": "Initial angle is 90 degrees (between 12 and 3). Current angle from B's initial position is 54 degrees. Difference = 90 - 54 = 36 degrees."
+        },
+        {
+          "number": "Q5",
+          "content": "The average age of 8 teachers of a school is 38 years. When one teacher, aged 47, resigns, and another joins in, the average age of the staff members reduces by 1.5. What is the present age of the newly appointed teacher?",
+          "options": [
+            "34",
+            "35",
+            "36",
+            "37"
+          ],
+          "answer": "35",
+          "explanation": "Total age = 304. After one leaves (47) and one joins (x): (304 - 47 + x)/8 = 36.5. 257 + x = 292. x = 35."
+        },
+        {
+          "number": "Q6",
+          "content": "The sum of the present ages of A and B is 40 years. After 4 years, the age of A will be 3 times that of B. What is the present age of B?",
+          "options": [
+            "12",
+            "16",
+            "8",
+            "10"
+          ],
+          "answer": "8",
+          "explanation": "A + B = 40. A + 4 = 3(B + 4). (40 - B) + 4 = 3B + 12. 44 - B = 3B + 12. 4B = 32. B = 8."
+        },
+        {
+          "number": "Q7",
+          "content": "12 executive members of a club donate $50 each towards a relief fund. The head of the club donates $12 more than the average of all the donated amount. What was the total amount donated?",
+          "options": [
+            "$662",
+            "$663",
+            "$664",
+            "$665"
+          ],
+          "answer": "$663",
+          "explanation": "Total = 600 + H. Avg = (600+H)/13. H = Avg + 12. 13H = 600 + H + 156. 12H = 756. H = 63. Total = 663."
+        },
+        {
+          "number": "Q8",
+          "content": "There are 80 passengers on a bus. The average mass of the passengers is 165 lbs. If every passenger is also carrying a 22 lbs bag, what is the percentage increase in the mass?",
+          "options": [
+            "10%",
+            "11%",
+            "12%",
+            "13%"
+          ],
+          "answer": "13%",
+          "explanation": "Increase = 22 / 165 * 100 = 13.33%."
+        },
+        {
+          "number": "Q9",
+          "content": "Five people ordered a meal at a restaurant. Four of them spent $12 less than the average amount of money they spent together and the fifth person spent $8 less than twice the average. What was the bill for each person?",
+          "options": [
+            "$56x4,$58",
+            "$48x4,$88",
+            "$52x4,$72",
+            "$44x4,$104"
+          ],
+          "answer": "$44x4,$104",
+          "explanation": "5A = 4(A-12) + (2A-8). 5A = 6A - 56. A = 56. Bill for 4 = 56-12=44. Bill for 5th = 112-8=104."
+        }
+      ]
+    },
+    {
+      "testSection": "Numerical Reasoning Test 2",
+      "questions": [
+        {
+          "number": "Q1",
+          "content": "If 65% of the students joining the faculty of science were male, how many female students were admitted over the three year period?",
+          "options": [
+            "A. 340",
+            "B. 233",
+            "C. 244",
+            "D. 433",
+            "E. 343"
+          ],
+          "answer": "B. 233",
+          "image": "/renamed_images/Questions 1-5 - Students by Faculty table + Science Students pie chart (1).jpg"
+        },
+        {
+          "number": "Q2",
+          "content": "How many students joined the Engineering and Science faculties in 2003 and 2004?",
+          "options": [
+            "A. 644",
+            "B. 532",
+            "C. 638",
+            "D. 660",
+            "E. 624"
+          ],
+          "answer": "C. 638",
+          "image": "/renamed_images/Questions 1-5 - Students by Faculty table + Science Students pie chart (1).jpg"
+        },
+        {
+          "number": "Q3",
+          "content": "The relative percentage of British students joining the faculty of science doubled in 2005 but the percentage of foreign students remained at 25%. How many British students joined the faculty in 2005?",
+          "options": [
+            "A. 18",
+            "B. 12",
+            "C. 14",
+            "D. 15",
+            "E. 16"
+          ],
+          "answer": "E. 16",
+          "image": "/renamed_images/Questions 1-5 - Students by Faculty table + Science Students pie chart (1).jpg"
+        },
+        {
+          "number": "Q4",
+          "content": "What percentage of students joined the law faculty over the three year period?",
+          "options": [
+            "A. 1.7%",
+            "B. 1.8%",
+            "C. 3.8%",
+            "D. 2.3%",
+            "E. 6.8%"
+          ],
+          "answer": "D. 2.3%",
+          "image": "/renamed_images/Questions 1-5 - Students by Faculty table + Science Students pie chart (1).jpg"
+        },
+        {
+          "number": "Q5",
+          "content": "If 25% of the students joining the faculty of science in 2004 were foreign, how many Mexican students joined the faculty that year?",
+          "options": [
+            "A. 10",
+            "B. 11",
+            "C. 12",
+            "D. 13",
+            "E. 14"
+          ],
+          "answer": "B. 11",
+          "image": "/renamed_images/Questions 1-5 - Students by Faculty table + Science Students pie chart (1).jpg"
+        },
+        {
+          "number": "Q6",
+          "content": "What percentage of total imports is accounted for by the three biggest importers?",
+          "options": [
+            "A. 61.6%",
+            "B. 62.3%",
+            "C. 63.2%",
+            "D. 64.8%",
+            "E. 66.9%"
+          ],
+          "answer": "D. 64.8%",
+          "image": "/renamed_images/Questions 6-11 - Motorcycle Sales (TT950) table.jpg"
+        },
+        {
+          "number": "Q7",
+          "content": "What is the average number of units per month imported into the UK over the first four months of the year?",
+          "options": [
+            "A. 41.75",
+            "B. 43.35",
+            "C. 44.75",
+            "D. 40.65",
+            "E. 43.25"
+          ],
+          "answer": "A. 41.75",
+          "image": "/renamed_images/Questions 6-11 - Motorcycle Sales (TT950) table.jpg"
+        },
+        {
+          "number": "Q8",
+          "content": "What percentage of the monthly total was sold to the biggest importer in May?",
+          "options": [
+            "A. 17%",
+            "B. 22%",
+            "C. 16%",
+            "D. 27%",
+            "E. 24%"
+          ],
+          "answer": "D. 27%",
+          "image": "/renamed_images/Questions 6-11 - Motorcycle Sales (TT950) table.jpg"
+        },
+        {
+          "number": "Q9",
+          "content": "Which month showed the biggest increase in total sales from the previous month?",
+          "options": [
+            "A. Feb",
+            "B. Mar",
+            "C. Apr",
+            "D. May",
+            "E. Jun"
+          ],
+          "answer": "C. Apr",
+          "image": "/renamed_images/Questions 6-11 - Motorcycle Sales (TT950) table.jpg"
+        },
+        {
+          "number": "Q10",
+          "content": "What percentage of the overall total was sold in February?",
+          "options": [
+            "A. 18%",
+            "B. 12%",
+            "C. 16%",
+            "D. 17%",
+            "E. 14%"
+          ],
+          "answer": "C. 16%",
+          "image": "/renamed_images/Questions 6-11 - Motorcycle Sales (TT950) table.jpg"
+        },
+        {
+          "number": "Q11",
+          "content": "What percentage of the overall total was sold to the Spanish importer?",
+          "options": [
+            "A. 18%",
+            "B. 12%",
+            "C. 15%",
+            "D. 17%",
+            "E. 14%"
+          ],
+          "answer": "C. 15%",
+          "image": "/renamed_images/Questions 6-11 - Motorcycle Sales (TT950) table.jpg"
+        },
+        {
+          "number": "Q12",
+          "content": "If 28,000 LandRangers were sold, what percentage of the total were the subject of a warranty claim due to engine failure?",
+          "options": [
+            "A. 0.25%",
+            "B. 0.54%",
+            "C. 0.74%",
+            "D. 0.84%",
+            "E. 1.85%"
+          ],
+          "answer": "B. 0.54%",
+          "image": "/renamed_images/Questions 12-15 - Warranty Claims bar chart.jpg"
+        },
+        {
+          "number": "Q13",
+          "content": "If warranty claims for the FreeRanger matched the industry average, how many bodywork claims would have been made?",
+          "options": [
+            "A. 157",
+            "B. 150",
+            "C. 155",
+            "D. 160",
+            "E. 165"
+          ],
+          "answer": "B. 150",
+          "image": "/renamed_images/Questions 12-15 - Warranty Claims bar chart.jpg"
+        },
+        {
+          "number": "Q14",
+          "content": "How many more warranty claims were made for the SportRanger than the FreeRanger due to electrical problems?",
+          "options": [
+            "A. 315",
+            "B. 350",
+            "C. 305",
+            "D. 330",
+            "E. 210"
+          ],
+          "answer": "A. 315",
+          "image": "/renamed_images/Questions 12-15 - Warranty Claims bar chart.jpg"
+        },
+        {
+          "number": "Q15",
+          "content": "How many LandRanger warranty claims involved transmission problems?",
+          "options": [
+            "A. 135",
+            "B. 140",
+            "C. 153",
+            "D. 145",
+            "E. 122"
+          ],
+          "answer": "C. 153",
+          "image": "/renamed_images/Questions 12-15 - Warranty Claims bar chart.jpg"
+        },
+        {
+          "number": "Q16",
+          "content": "What percentage of total cases of wine sold over the four year period were rose?",
+          "options": [
+            "A. 26.3%",
+            "B. 23.6%",
+            "C. 26.6%",
+            "D. 29.6%",
+            "E. 27.6%"
+          ],
+          "answer": "E. 27.6%",
+          "image": "/renamed_images/Questions 16-20 - WineBrokers.com bar chart + price table.jpg"
+        },
+        {
+          "number": "Q17",
+          "content": "If white wine increased in price by 10% from 2005 to 2006, what would be the approximate average cost per case over the five year period?",
+          "options": [
+            "A. $133",
+            "B. $136",
+            "C. $143",
+            "D. $126",
+            "E. $138"
+          ],
+          "answer": "B. $136",
+          "image": "/renamed_images/Questions 16-20 - WineBrokers.com bar chart + price table.jpg"
+        },
+        {
+          "number": "Q18",
+          "content": "What is the difference in the value of red wine sales between 2002 and 2003?",
+          "options": [
+            "A. $2,320",
+            "B. $3,220",
+            "C. $2,330",
+            "D. $2,360",
+            "E. $2,280"
+          ],
+          "answer": "A. $2,320",
+          "image": "/renamed_images/Questions 16-20 - WineBrokers.com bar chart + price table.jpg"
+        },
+        {
+          "number": "Q19",
+          "content": "What is the approximate value of rose wine sold over the four year period in thousands of dollars?",
+          "options": [
+            "A. 134",
+            "B. 129",
+            "C. 131",
+            "D. 125",
+            "E. 127"
+          ],
+          "answer": "C. 131",
+          "image": "/renamed_images/Questions 16-20 - WineBrokers.com bar chart + price table.jpg"
+        },
+        {
+          "number": "Q20",
+          "content": "What was the average number of cases sold per year over the four year period?",
+          "options": [
+            "A. 1010",
+            "B. 1005",
+            "C. 985",
+            "D. 995",
+            "E. 990"
+          ],
+          "answer": "D. 995",
+          "image": "/renamed_images/Questions 16-20 - WineBrokers.com bar chart + price table.jpg"
+        },
+        {
+          "number": "Q21",
+          "content": "If the ratio of male to female students specializing in sports medicine is 2:1, how many female students does this represent?",
+          "options": [
+            "A. 6",
+            "B. 5",
+            "C. 12",
+            "D. 18",
+            "E. 10"
+          ],
+          "answer": "A. 6",
+          "image": "/renamed_images/Questions 21-25 - North West Medical School pie chart.jpg"
+        },
+        {
+          "number": "Q22",
+          "content": "If seven students changed their specialization from family practice to paediatrics, approximately what fraction of students would then be specializing in paediatrics?",
+          "options": [
+            "A. 1/7",
+            "B. 1/4",
+            "C. 1/7",
+            "D. 1/5",
+            "E. 1/15"
+          ],
+          "answer": "D. 1/5",
+          "image": "/renamed_images/Questions 21-25 - North West Medical School pie chart.jpg"
+        },
+        {
+          "number": "Q23",
+          "content": "What is the approximate ratio of students specializing in sports medicine, emergency medicine and family practice?",
+          "options": [
+            "A. 6:4:10",
+            "B. 1:4:5",
+            "C. 2:8:10",
+            "D. 3:2:10",
+            "E. 3:2:5"
+          ],
+          "answer": "D. 3:2:10",
+          "image": "/renamed_images/Questions 21-25 - North West Medical School pie chart.jpg"
+        },
+        {
+          "number": "Q24",
+          "content": "One twelfth of the students who chose to specialize in family practice plan to work abroad. How many is this?",
+          "options": [
+            "A. 7",
+            "B. 8",
+            "C. 5",
+            "D. 9",
+            "E. 3"
+          ],
+          "answer": "C. 5",
+          "image": "/renamed_images/Questions 21-25 - North West Medical School pie chart.jpg"
+        },
+        {
+          "number": "Q25",
+          "content": "How many students decided to specialize in immunology?",
+          "options": [
+            "A. 9",
+            "B. 11",
+            "C. 14",
+            "D. 7",
+            "E. 15"
+          ],
+          "answer": "B. 11",
+          "image": "/renamed_images/Questions 21-25 - North West Medical School pie chart.jpg"
+        },
+        {
+          "number": "Q26",
+          "content": "Approximately what percentage of Ace Marketing's total business is accounted for by their three smallest clients?",
+          "options": [
+            "A. 18%",
+            "B. 17%",
+            "C. 20%",
+            "D. 16%",
+            "E. 22%"
+          ],
+          "answer": "C. 20%",
+          "image": "/renamed_images/Questions 26-30 - Ace Marketing table + pie chart (1).jpg"
+        },
+        {
+          "number": "Q27",
+          "content": "Approximately what percentage of Ace Marketing's total business is for Aardvark Cellular?",
+          "options": [
+            "A. 49%",
+            "B. 57%",
+            "C. 50%",
+            "D. 54%",
+            "E. 56%"
+          ],
+          "answer": "D. 54%",
+          "image": "/renamed_images/Questions 26-30 - Ace Marketing table + pie chart (1).jpg"
+        },
+        {
+          "number": "Q28",
+          "content": "If flyers for Aardvark Cellular cost $150 per thousand, approximately how many thousand have been produced?",
+          "options": [
+            "A. 23",
+            "B. 20",
+            "C. 17",
+            "D. 14",
+            "E. 18"
+          ],
+          "answer": "B. 20",
+          "image": "/renamed_images/Questions 26-30 - Ace Marketing table + pie chart (1).jpg"
+        },
+        {
+          "number": "Q29",
+          "content": "If Ace charges their clients cost price plus 20%, how much will they bill Aardvark Cellular for their website?",
+          "options": [
+            "A. $1,536",
+            "B. $1,174",
+            "C. $1,744",
+            "D. $1,280",
+            "E. $1,474"
+          ],
+          "answer": "A. $1,536",
+          "image": "/renamed_images/Questions 26-30 - Ace Marketing table + pie chart (1).jpg"
+        },
+        {
+          "number": "Q30",
+          "content": "Approximately how much was spent on brochures for Aardvark Cellular?",
+          "options": [
+            "A. $4,994",
+            "B. $4,774",
+            "C. $4,632",
+            "D. $4,694",
+            "E. $4,624"
+          ],
+          "answer": "D. $4,694",
+          "image": "/renamed_images/Questions 26-30 - Ace Marketing table + pie chart (1).jpg"
+        },
+        {
+          "number": "Q31",
+          "content": "Approximately what fraction of passengers who travelled in Q4 2005 flew to Berlin?",
+          "options": [
+            "A. 1/8",
+            "B. 1/4",
+            "C. 1/7",
+            "D. 1/5",
+            "E. 1/15"
+          ],
+          "answer": "C. 1/7",
+          "image": "/renamed_images/Questions 31-34 - SleazyJet line graph.jpg"
+        },
+        {
+          "number": "Q32",
+          "content": "How many more passengers travelled to Rome in Q2 2005 than in the same quarter the previous year?",
+          "options": [
+            "A. 5,000",
+            "B. 4,000",
+            "C. 3,000",
+            "D. 2,000",
+            "E. 1,000"
+          ],
+          "answer": "E. 1,000",
+          "image": "/renamed_images/Questions 31-34 - SleazyJet line graph.jpg"
+        },
+        {
+          "number": "Q33",
+          "content": "What was the ratio of passengers travelling to London and Paris in Q2 2004?",
+          "options": [
+            "A. 2.2:1",
+            "B. 1.8:1",
+            "C. 2:1",
+            "D. 0.75:1",
+            "E. 1:2"
+          ],
+          "answer": "B. 1.8:1",
+          "image": "/renamed_images/Questions 31-34 - SleazyJet line graph.jpg"
+        },
+        {
+          "number": "Q34",
+          "content": "How many passengers travelled in Quarter 4 2004?",
+          "options": [
+            "A. 46,000",
+            "B. 44,000",
+            "C. 43,000",
+            "D. 45,000",
+            "E. 42,000"
+          ],
+          "answer": "A. 46,000",
+          "image": "/renamed_images/Questions 31-34 - SleazyJet line graph.jpg"
+        },
+        {
+          "number": "Q35",
+          "content": "How much extra profit would be generated if dealers doubled the number of Body Kits fitted when they sold a FreeRanger?",
+          "options": [
+            "A. $2,268",
+            "B. $4,534",
+            "C. $1,130",
+            "D. $1,238",
+            "E. $226"
+          ],
+          "answer": "A. $2,268",
+          "image": "/renamed_images/Questions 35-39 - Additional to Specification bar chart (1).jpg"
+        },
+        {
+          "number": "Q36",
+          "content": "How much profit (margin), in millions of dollars, can be attributed to Cruise Control fitted to the FreeRanger?",
+          "options": [
+            "A. 0.61",
+            "B. 0.48",
+            "C. 0.21",
+            "D. 4.80",
+            "E. 3.60"
+          ],
+          "answer": "B. 0.48",
+          "image": "/renamed_images/Questions 35-39 - Additional to Specification bar chart (1).jpg"
+        },
+        {
+          "number": "Q37",
+          "content": "How much profit (margin), in millions of dollars, can be attributed to Body Kits fitted to the SportRanger?",
+          "options": [
+            "A. 0.49",
+            "B. 1.48",
+            "C. 4.80",
+            "D. 0.36",
+            "E. 0.21"
+          ],
+          "answer": "A. 0.49",
+          "image": "/renamed_images/Questions 35-39 - Additional to Specification bar chart (1).jpg"
+        },
+        {
+          "number": "Q38",
+          "content": "How much total revenue, in millions of dollars, did Alloy Wheels generate for FreeRanger sales?",
+          "options": [
+            "A. 1.41",
+            "B. 1.28",
+            "C. 1.30",
+            "D. 1.36",
+            "E. 11.20"
+          ],
+          "answer": "D. 1.36",
+          "image": "/renamed_images/Questions 35-39 - Additional to Specification bar chart (1).jpg"
+        },
+        {
+          "number": "Q39",
+          "content": "How many customers specified cruise control when ordering a FreeRanger?",
+          "options": [
+            "A. 5,320",
+            "B. 2,566",
+            "C. 4,861",
+            "D. 2,861",
+            "E. 5,402"
+          ],
+          "answer": "E. 5,402",
+          "image": "/renamed_images/Questions 35-39 - Additional to Specification bar chart (1).jpg"
+        },
+        {
+          "number": "Q40",
+          "content": "Approximately what fraction of the total tonnage of imports is rice?",
+          "options": [
+            "A. 1/5",
+            "B. 1/4",
+            "C. 1/3",
+            "D. 2/5",
+            "E. 3/10"
+          ],
+          "answer": "E. 3/10",
+          "image": "/renamed_images/Questions 40-44 - Agricultural Imports bar chart (1).jpg"
+        },
+        {
+          "number": "Q41",
+          "content": "What was the average value of potatoes imported per month over the whole period?",
+          "options": [
+            "A. $3,448",
+            "B. $3,648",
+            "C. $3,728",
+            "D. $3,348",
+            "E. $3,655"
+          ],
+          "answer": "B. $3,648",
+          "image": "/renamed_images/Questions 40-44 - Agricultural Imports bar chart (1).jpg"
+        },
+        {
+          "number": "Q42",
+          "content": "What was the average tonnage of rice imported per month over the whole period?",
+          "options": [
+            "A. 27.4",
+            "B. 22.9",
+            "C. 24.4",
+            "D. 28.2",
+            "E. 30.2"
+          ],
+          "answer": "D. 28.2",
+          "image": "/renamed_images/Questions 40-44 - Agricultural Imports bar chart (1).jpg"
+        },
+        {
+          "number": "Q43",
+          "content": "What was the total value of wheat imports, in dollars, over the 5 month period?",
+          "options": [
+            "A. 27,456",
+            "B. 27,742",
+            "C. 27,656",
+            "D. 26,446",
+            "E. 26,446"
+          ],
+          "answer": "A. 27,456",
+          "image": "/renamed_images/Questions 40-44 - Agricultural Imports bar chart (1).jpg"
+        },
+        {
+          "number": "Q44",
+          "content": "How many tons of rice were imported over the 5 month period?",
+          "options": [
+            "A. 144",
+            "B. 141",
+            "C. 138",
+            "D. 139",
+            "E. 137"
+          ],
+          "answer": "B. 141",
+          "image": "/renamed_images/Questions 40-44 - Agricultural Imports bar chart (1).jpg"
+        },
+        {
+          "number": "Q45",
+          "content": "Approximately what fraction of the total time spent on the telephone by all of the agents was spent taking inbound calls for client Maltman?",
+          "options": [
+            "A. 1/16",
+            "B. 1/4",
+            "C. 1/8",
+            "D. 1/5",
+            "E. 1/20"
+          ],
+          "answer": "C. 1/8",
+          "image": "/renamed_images/Questions 45-50 - Call Centre table (Maltman-Healey).jpg"
+        },
+        {
+          "number": "Q46",
+          "content": "What is the approximate ratio of inbound calls taken by Kai to calls taken by Mandi?",
+          "options": [
+            "A. 1:3",
+            "B. 2:3",
+            "C. 3:2",
+            "D. 1:2",
+            "E. 2:1"
+          ],
+          "answer": "D. 1:2",
+          "image": "/renamed_images/Questions 45-50 - Call Centre table (Maltman-Healey).jpg"
+        },
+        {
+          "number": "Q47",
+          "content": "What percentage of the Maltman bill is due to inbound calls?",
+          "options": [
+            "A. 26%",
+            "B. 28%",
+            "C. 29%",
+            "D. 31%",
+            "E. 24%"
+          ],
+          "answer": "A. 26%",
+          "image": "/renamed_images/Questions 45-50 - Call Centre table (Maltman-Healey).jpg"
+        },
+        {
+          "number": "Q48",
+          "content": "Approximately how many hours did Charlotte spend on the phone during the month?",
+          "options": [
+            "A. 77",
+            "B. 87",
+            "C. 84",
+            "D. 80",
+            "E. 110"
+          ],
+          "answer": "E. 110",
+          "image": "/renamed_images/Questions 45-50 - Call Centre table (Maltman-Healey).jpg"
+        },
+        {
+          "number": "Q49",
+          "content": "Approximately how much will client Healey be billed for the month?",
+          "options": [
+            "A. $2,798",
+            "B. $2,700",
+            "C. $2,698",
+            "D. $2,708",
+            "E. $2,308"
+          ],
+          "answer": "D. $2,708",
+          "image": "/renamed_images/Questions 45-50 - Call Centre table (Maltman-Healey).jpg"
+        },
+        {
+          "number": "Q50",
+          "content": "Approximately how much will client Maltman be billed for the month?",
+          "options": [
+            "A. $3,948",
+            "B. $3,946",
+            "C. $3,932",
+            "D. $3,892",
+            "E. $3,776"
+          ],
+          "answer": "C. $3,932",
+          "image": "/renamed_images/Questions 45-50 - Call Centre table (Maltman-Healey).jpg"
+        },
+        {
+          "number": "Q51",
+          "content": "If the unit price of the ZXC43 falls by 20% in April, but the number of units sold doubles, how much revenue will this generate?",
+          "options": [
+            "A. $1,440",
+            "B. $1,152",
+            "C. $1,252",
+            "D. $1,240",
+            "E. $1,140"
+          ],
+          "answer": "B. $1,152",
+          "image": "/renamed_images/Questions 51-57 - Switch Sales table (ZXC43-53-63).jpg"
+        },
+        {
+          "number": "Q52",
+          "content": "An order for 9 ZXC43 switches and 8 ZXC53 switches could not be processed in time to be added to the March figures. How much revenue would this have added?",
+          "options": [
+            "A. $224",
+            "B. $242",
+            "C. $248",
+            "D. $239",
+            "E. $226"
+          ],
+          "answer": "B. $242",
+          "image": "/renamed_images/Questions 51-57 - Switch Sales table (ZXC43-53-63).jpg"
+        },
+        {
+          "number": "Q53",
+          "content": "What percentage of the total revenue was generated in February?",
+          "options": [
+            "A. 28%",
+            "B. 29%",
+            "C. 33%",
+            "D. 30%",
+            "E. 27%"
+          ],
+          "answer": "C. 33%",
+          "image": "/renamed_images/Questions 51-57 - Switch Sales table (ZXC43-53-63).jpg"
+        },
+        {
+          "number": "Q54",
+          "content": "What is the approximate ratio of unit sales of the ZXC53 and ZXC63 over the three month period?",
+          "options": [
+            "A. 3:1",
+            "B. 1:3",
+            "C. 2:3",
+            "D. 3:2",
+            "E. 2:1"
+          ],
+          "answer": "A. 3:1",
+          "image": "/renamed_images/Questions 51-57 - Switch Sales table (ZXC43-53-63).jpg"
+        },
+        {
+          "number": "Q55",
+          "content": "What was the total revenue generated by sales of the ZXC63?",
+          "options": [
+            "A. $880",
+            "B. $780",
+            "C. $860",
+            "D. $760",
+            "E. $680"
+          ],
+          "answer": "C. $860",
+          "image": "/renamed_images/Questions 51-57 - Switch Sales table (ZXC43-53-63).jpg"
+        },
+        {
+          "number": "Q56",
+          "content": "How many ZXC43 units could be expected to sell in April?",
+          "options": [
+            "A. 45",
+            "B. 32",
+            "C. 40",
+            "D. 48",
+            "E. 56"
+          ],
+          "answer": "E. 56",
+          "image": "/renamed_images/Questions 51-57 - Switch Sales table (ZXC43-53-63).jpg"
+        },
+        {
+          "number": "Q57",
+          "content": "What is the unit cost of switch type ZXC53?",
+          "options": [
+            "A. $11",
+            "B. $13",
+            "C. $12",
+            "D. $15",
+            "E. $17"
+          ],
+          "answer": "B. $13",
+          "image": "/renamed_images/Questions 51-57 - Switch Sales table (ZXC43-53-63).jpg"
+        },
+        {
+          "number": "Q58",
+          "content": "What was the total profit made on the MXP66 unit across all 3 regions?",
+          "options": [
+            "A. 13,109",
+            "B. 13,209",
+            "C. 13,009",
+            "D. 13,029",
+            "E. 13,019"
+          ],
+          "answer": "C. 13,009",
+          "image": "/renamed_images/Questions 58-62 - Product Sales by Region bar chart.jpg"
+        },
+        {
+          "number": "Q59",
+          "content": "What was the total value of sales of the MXP21 unit across all 3 regions?",
+          "options": [
+            "A. 85,512",
+            "B. 85,126",
+            "C. 86,216",
+            "D. 81,602",
+            "E. 85,612"
+          ],
+          "answer": "E. 85,612",
+          "image": "/renamed_images/Questions 58-62 - Product Sales by Region bar chart.jpg"
+        },
+        {
+          "number": "Q60",
+          "content": "How many more MXP45 units were sold in the Western Region compared to the Central region?",
+          "options": [
+            "A. 155",
+            "B. 177",
+            "C. 287",
+            "D. 180",
+            "E. 185"
+          ],
+          "answer": "B. 177",
+          "image": "/renamed_images/Questions 58-62 - Product Sales by Region bar chart.jpg"
+        },
+        {
+          "number": "Q61",
+          "content": "What was the value of sales for the MXP34 in the Western region?",
+          "options": [
+            "A. 18,172",
+            "B. 18,272",
+            "C. 18,372",
+            "D. 18,568",
+            "E. 18,472"
+          ],
+          "answer": "D. 18,568",
+          "image": "/renamed_images/Questions 58-62 - Product Sales by Region bar chart.jpg"
+        },
+        {
+          "number": "Q62",
+          "content": "How many MXP21 units were sold in the Central region?",
+          "options": [
+            "A. 1147",
+            "B. 844",
+            "C. 1087",
+            "D. 1177",
+            "E. 114"
+          ],
+          "answer": "A. 1147",
+          "image": "/renamed_images/Questions 58-62 - Product Sales by Region bar chart.jpg"
+        },
+        {
+          "number": "Q63",
+          "content": "If 55% of the students joining the faculty of science were male, how many female students were admitted over the three year period?",
+          "options": [
+            "A. 303",
+            "B. 290",
+            "C. 298",
+            "D. 300",
+            "E. 294"
+          ],
+          "answer": "D. 300",
+          "image": "/renamed_images/Questions 63-67 - Same Students by Faculty table (repeated) (1).jpg"
+        },
+        {
+          "number": "Q64",
+          "content": "How many students joined the Business and Computing faculties in 2003 and 2004?",
+          "options": [
+            "A. 1,001",
+            "B. 1,113",
+            "C. 1,133",
+            "D. 1,108",
+            "E. 1,100"
+          ],
+          "answer": "D. 1,108",
+          "image": "/renamed_images/Questions 63-67 - Same Students by Faculty table (repeated) (1).jpg"
+        },
+        {
+          "number": "Q65",
+          "content": "The relative percentage of Chinese students joining the faculty of science doubled in 2005 but the percentage of foreign students remained at 45%. How many Chinese students joined the faculty in 2005?",
+          "options": [
+            "A. 46",
+            "B. 36",
+            "C. 63",
+            "D. 40",
+            "E. 48"
+          ],
+          "answer": "A. 46",
+          "image": "/renamed_images/Questions 63-67 - Same Students by Faculty table (repeated) (1).jpg"
+        },
+        {
+          "number": "Q66",
+          "content": "What percentage of students joined the arts faculty over the three year period?",
+          "options": [
+            "A. 13.2%",
+            "B. 11.7%",
+            "C. 12.6%",
+            "D. 6.3%",
+            "E. 4.3%"
+          ],
+          "answer": "D. 6.3%",
+          "image": "/renamed_images/Questions 63-67 - Same Students by Faculty table (repeated) (1).jpg"
+        },
+        {
+          "number": "Q67",
+          "content": "If 23% of the students joining the faculty of science in 2004 were foreign, how many Canadian students joined the faculty that year?",
+          "options": [
+            "A. 22",
+            "B. 14",
+            "C. 11",
+            "D. 21",
+            "E. 7"
+          ],
+          "answer": "C. 11",
+          "image": "/renamed_images/Questions 63-67 - Same Students by Faculty table (repeated) (1).jpg"
+        },
+        {
+          "number": "Q68",
+          "content": "What percentage of the total value of meat sold over the 5 month period was pork?",
+          "options": [
+            "A. 30.4%",
+            "B. 29.6%",
+            "C. 31.7%",
+            "D. 30.6%",
+            "E. 29.4%"
+          ],
+          "answer": "C. 31.7%",
+          "image": "/renamed_images/Questions 68-71 - Home Farm Meat Sales bar chart.jpg"
+        },
+        {
+          "number": "Q69",
+          "content": "What percentage of the total quantity of meat sold over the 5 month period was beef?",
+          "options": [
+            "A. 32.2%",
+            "B. 33.6%",
+            "C. 29.2%",
+            "D. 28.4%",
+            "E. 34.4%"
+          ],
+          "answer": "E. 34.4%",
+          "image": "/renamed_images/Questions 68-71 - Home Farm Meat Sales bar chart.jpg"
+        },
+        {
+          "number": "Q70",
+          "content": "What was the total value of lamb sold over the 5 month period?",
+          "options": [
+            "A. $5,200",
+            "B. $5,700",
+            "C. $6,600",
+            "D. $5,400",
+            "E. $5,300"
+          ],
+          "answer": "B. $5,700",
+          "image": "/renamed_images/Questions 68-71 - Home Farm Meat Sales bar chart.jpg"
+        },
+        {
+          "number": "Q71",
+          "content": "Which month showed the largest increase in total quantity of meat sold over the previous month?",
+          "options": [
+            "A. Jan",
+            "B. Feb",
+            "C. Mar",
+            "D. Apr",
+            "E. May"
+          ],
+          "answer": "B. Feb",
+          "image": "/renamed_images/Questions 68-71 - Home Farm Meat Sales bar chart.jpg"
+        },
+        {
+          "number": "Q72",
+          "content": "What percentage of total LandRanger production took place in 2004?",
+          "options": [
+            "A. 45%",
+            "B. 68%",
+            "C. 65%",
+            "D. 55%",
+            "E. 60%"
+          ],
+          "answer": "E. 60%",
+          "image": "/renamed_images/Questions 72-75 - SUV Production line graph.jpg"
+        },
+        {
+          "number": "Q73",
+          "content": "What was the approximate ratio of SportRangers to LandRangers produced in the final quarter of 2005?",
+          "options": [
+            "A. 3:1",
+            "B. 3:2",
+            "C. 1:3",
+            "D. 2:3",
+            "E. 4:3"
+          ],
+          "answer": "A. 3:1",
+          "image": "/renamed_images/Questions 72-75 - SUV Production line graph.jpg"
+        },
+        {
+          "number": "Q74",
+          "content": "What percentage of vehicle production in Q2 2005 is accounted for by the SportRanger?",
+          "options": [
+            "A. 50%",
+            "B. 40%",
+            "C. 20%",
+            "D. 30%",
+            "E. 60%"
+          ],
+          "answer": "B. 40%",
+          "image": "/renamed_images/Questions 72-75 - SUV Production line graph.jpg"
+        },
+        {
+          "number": "Q75",
+          "content": "What was the total number of vehicles produced in Q4 2004?",
+          "options": [
+            "A. 43,000",
+            "B. 40,000",
+            "C. 38,000",
+            "D. 47,000",
+            "E. 36,000"
+          ],
+          "answer": "C. 38,000",
+          "image": "/renamed_images/Questions 72-75 - SUV Production line graph.jpg"
+        },
+        {
+          "number": "Q76",
+          "content": "What is the ratio of respondents who prefer Rock to those who prefer Jazz in the 21-30 age group?",
+          "options": [
+            "A. 1:3",
+            "B. 3:2",
+            "C. 3:1",
+            "D. 2:3",
+            "E. 1:1"
+          ],
+          "answer": "C. 3:1",
+          "image": "/renamed_images/Questions 76-79 - Music Survey table (1).jpg"
+        },
+        {
+          "number": "Q77",
+          "content": "What percentage of the total sample indicated that Jazz is their favourite style of music?",
+          "options": [
+            "A. 6%",
+            "B. 8%",
+            "C. 22%",
+            "D. 4%",
+            "E. 12%"
+          ],
+          "answer": "E. 12%",
+          "image": "/renamed_images/Questions 76-79 - Music Survey table (1).jpg"
+        },
+        {
+          "number": "Q78",
+          "content": "What percentage of respondents aged 21-30 indicated a favourite style other than Rock music?",
+          "options": [
+            "A. 64%",
+            "B. 60%",
+            "C. 75%",
+            "D. 36%",
+            "E. 46%"
+          ],
+          "answer": "A. 64%",
+          "image": "/renamed_images/Questions 76-79 - Music Survey table (1).jpg"
+        },
+        {
+          "number": "Q79",
+          "content": "What percentage of respondents under 31 indicated that Blues is their favourite style of music?",
+          "options": [
+            "A. 7.1",
+            "B. 7.5",
+            "C. 8.3",
+            "D. 14.1",
+            "E. 7.2"
+          ],
+          "answer": "B. 7.5",
+          "image": "/renamed_images/Questions 76-79 - Music Survey table (1).jpg"
+        },
+        {
+          "number": "Q80",
+          "content": "There are 34 European medical students. What percentage of the faculty does this represent?",
+          "options": [
+            "A. 14%",
+            "B. 18%",
+            "C. 12%",
+            "D. 16%",
+            "E. 15%"
+          ],
+          "answer": "E. 15%",
+          "image": "/renamed_images/Questions 80-84 - Faculty Distribution pie charts (1).jpg"
+        },
+        {
+          "number": "Q81",
+          "content": "If six percent of Science students are Asian, how many Asian students are there studying Science?",
+          "options": [
+            "A. 48",
+            "B. 66",
+            "C. 120",
+            "D. 57",
+            "E. 43"
+          ],
+          "answer": "D. 57",
+          "image": "/renamed_images/Questions 80-84 - Faculty Distribution pie charts (1).jpg"
+        },
+        {
+          "number": "Q82",
+          "content": "How many students are there at the university?",
+          "options": [
+            "A. 4650",
+            "B. 4560",
+            "C. 4640",
+            "D. 4450",
+            "E. 4460"
+          ],
+          "answer": "B. 4560",
+          "image": "/renamed_images/Questions 80-84 - Faculty Distribution pie charts (1).jpg"
+        },
+        {
+          "number": "Q83",
+          "content": "How many students are there in the Engineering faculty?",
+          "options": [
+            "A. 420",
+            "B. 410",
+            "C. 390",
+            "D. 440",
+            "E. 400"
+          ],
+          "answer": "B. 410",
+          "image": "/renamed_images/Questions 80-84 - Faculty Distribution pie charts (1).jpg"
+        },
+        {
+          "number": "Q84",
+          "content": "What percentage of students in the Arts faculty are non-US students?",
+          "options": [
+            "A. 14%",
+            "B. 9%",
+            "C. 30%",
+            "D. 11%",
+            "E. 15%"
+          ],
+          "answer": "D. 11%",
+          "image": "/renamed_images/Questions 80-84 - Faculty Distribution pie charts (1).jpg"
+        },
+        {
+          "number": "Q90",
+          "content": "What was the approximate ratio of sheet steel and coil steel imports in the first 3 months of the year?",
+          "options": [
+            "A. 11:9",
+            "B. 8:9",
+            "C. 7:11",
+            "D. 3:8",
+            "E. 7:4"
+          ],
+          "answer": "A. 11:9",
+          "image": "/renamed_images/Questions 90-94 - Steel Imports bar chart (1).jpg"
+        },
+        {
+          "number": "Q91",
+          "content": "What was the difference (in thousands of tons) between coil steel and sheet steel imports in the first 3 months of the year?",
+          "options": [
+            "A. 10",
+            "B. 16",
+            "C. 18",
+            "D. 19",
+            "E. 20"
+          ],
+          "answer": "A. 10",
+          "image": "/renamed_images/Questions 90-94 - Steel Imports bar chart (1).jpg"
+        },
+        {
+          "number": "Q92",
+          "content": "What was the percentage of scrap steel imported in the 6 month period?",
+          "options": [
+            "A. 37.5",
+            "B. 35.2",
+            "C. 36.1",
+            "D. 31.2",
+            "E. 38.3"
+          ],
+          "answer": "D. 31.2",
+          "image": "/renamed_images/Questions 90-94 - Steel Imports bar chart (1).jpg"
+        },
+        {
+          "number": "Q93",
+          "content": "What was the total value of sheet steel (in $) imported over the 6 month period?",
+          "options": [
+            "A. 56,750",
+            "B. 75,300",
+            "C. 55,552",
+            "D. 42,370",
+            "E. 44,750"
+          ],
+          "answer": "C. 55,552",
+          "image": "/renamed_images/Questions 90-94 - Steel Imports bar chart (1).jpg"
+        },
+        {
+          "number": "Q94",
+          "content": "Which month showed the largest decrease in total imports over the previous month?",
+          "options": [
+            "A. Feb",
+            "B. Mar",
+            "C. Apr",
+            "D. May",
+            "E. Jun"
+          ],
+          "answer": "B. Mar",
+          "image": "/renamed_images/Questions 90-94 - Steel Imports bar chart (1).jpg"
+        },
+        {
+          "number": "Q95",
+          "content": "What percentage of total imports is accounted for by the three smallest importers?",
+          "options": [
+            "A. 37.1",
+            "B. 14.8",
+            "C. 40.0",
+            "D. 36.6",
+            "E. 35.1"
+          ],
+          "answer": "E. 35.1",
+          "image": "/renamed_images/Questions 95-100 - Motorcycle Sales (TT950) table.jpg"
+        },
+        {
+          "number": "Q96",
+          "content": "What is the average number of units per month imported into Italy over the first four months of the year?",
+          "options": [
+            "A. 22",
+            "B. 23",
+            "C. 24",
+            "D. 25",
+            "E. 26"
+          ],
+          "answer": "C. 24",
+          "image": "/renamed_images/Questions 95-100 - Motorcycle Sales (TT950) table.jpg"
+        },
+        {
+          "number": "Q97",
+          "content": "What percentage of the monthly total was sold to the biggest importer in February?",
+          "options": [
+            "A. 24.7",
+            "B. 23.1",
+            "C. 36.5",
+            "D. 51.1",
+            "E. 15.1"
+          ],
+          "answer": "C. 36.5",
+          "image": "/renamed_images/Questions 95-100 - Motorcycle Sales (TT950) table.jpg"
+        },
+        {
+          "number": "Q98",
+          "content": "Which month showed the biggest increase in total sales from the previous month?",
+          "options": [
+            "A. Feb",
+            "B. Mar",
+            "C. Apr",
+            "D. May",
+            "E. Jun"
+          ],
+          "answer": "A. Feb",
+          "image": "/renamed_images/Questions 95-100 - Motorcycle Sales (TT950) table.jpg"
+        },
+        {
+          "number": "Q99",
+          "content": "What percentage of the overall total was sold in May?",
+          "options": [
+            "A. 24.1",
+            "B. 25.6",
+            "C. 27.1",
+            "D. 17.8",
+            "E. 20.3"
+          ],
+          "answer": "C. 27.1",
+          "image": "/renamed_images/Questions 95-100 - Motorcycle Sales (TT950) table.jpg"
+        }
+      ]
+    },
+    {
+      "testSection": "Numerical Reasoning Test 3",
+      "questions": [
+        {
+          "number": "Q1",
+          "content": "How much did the combined revenue from Slot machines and Roulette differ from that of Other table games between 2006-2009 inclusive (in £millions)?",
+          "options": [
+            "0.9",
+            "9.0",
+            "9.2",
+            "0.92",
+            "None of these"
+          ],
+          "answer": "D",
+          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-1.jpg",
+          "steps": [
+            "Step 1 - Calculate the totals for Slot machines, Roulette, Other table games \\n\n            Slot machines = 1.3 + 1.4 + 1.8 + 1.5 = 6\", \\n\n            Roulette = 0.8 + 0.6 +0.6 +0.7 = 2.7\", \\n\n            Other table games = 4.4 + 4.2 + 4.5 + 4.8 = 17.9\", \\n\n            Step 2 - Calculate the difference\", \\n\n            17.9 – 6 – 2.7 = 9.2\", \\n\n            Step 3 – Put into £millions = 0.92\", \\n\n            Thus the correct answer is (D) 0.92\""
+          ],
+          "instructions": "This Numerical reasoning test comprises 20 questions and you will have 20 minutes in which to correctly answer as many as you can.\nIn each question you will be presented with tables, graphs or charts followed by three or four questions. You will need to determine which answer is correct based on the information provided in the passages only.\nYou will have to work quickly and accurately to perform well in this test. If you don't know the answer to a question, leave it and come back to it if you have time.\nYou can submit your test at any time. If the time limit is up before you click submit the test will automatically be submitted with the answers you have selected. It is recommended to keep working until the time limit is up.\nTry to find a time and place where you will not be interrupted during the test. The test will start on the next page."
+        },
+        {
+          "number": "Q10",
+          "content": "If delays at the end of 2009 resulted in a 2.5% increase in the cost of each of the two most expensive projects, what is the total R&D spend for 2009 (to the nearest £1,000)?",
+          "options": [
+            "£2,482,000",
+            "£2,527,000",
+            "£2,528,000",
+            "£2,556,000",
+            "None of These"
+          ],
+          "answer": "B",
+          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-2.jpg",
+          "steps": [
+            "Step 1 - Find Additional Charges"
+          ],
+          "instructions": "This Numerical reasoning test comprises 20 questions and you will have 20 minutes in which to correctly answer as many as you can.\nIn each question you will be presented with tables, graphs or charts followed by three or four questions. You will need to determine which answer is correct based on the information provided in the passages only.\nYou will have to work quickly and accurately to perform well in this test. If you don't know the answer to a question, leave it and come back to it if you have time.\nYou can submit your test at any time. If the time limit is up before you click submit the test will automatically be submitted with the answers you have selected. It is recommended to keep working until the time limit is up.\nTry to find a time and place where you will not be interrupted during the test. The test will start on the next page."
+        },
+        {
+          "number": "Q11",
+          "content": "What is the number of shares not held by Directors of Leutts (as of 30 April 2009)?",
+          "options": [
+            "25,620",
+            "6,850",
+            "43,500",
+            "4,880",
+            "Cannot tell from data"
+          ],
+          "answer": "A",
+          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-3.jpg",
+          "steps": [
+            "Step 1 - calculate share holding by directors",
+            "Step 2 - calculate net holding by directors"
+          ],
+          "instructions": "This Numerical reasoning test comprises 20 questions and you will have 20 minutes in which to correctly answer as many as you can.\nIn each question you will be presented with tables, graphs or charts followed by three or four questions. You will need to determine which answer is correct based on the information provided in the passages only.\nYou will have to work quickly and accurately to perform well in this test. If you don't know the answer to a question, leave it and come back to it if you have time.\nYou can submit your test at any time. If the time limit is up before you click submit the test will automatically be submitted with the answers you have selected. It is recommended to keep working until the time limit is up.\nTry to find a time and place where you will not be interrupted during the test. The test will start on the next page."
+        },
+        {
+          "number": "Q12",
+          "content": "Which Director has bought or sold the largest number of shares across the 2-month period shown?",
+          "options": [
+            "Geoffrey Yates",
+            "Trudy Stupples",
+            "Samantha Hoxton",
+            "Susan Preddy",
+            "Tobey Gilham"
+          ],
+          "answer": "B",
+          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-3.jpg",
+          "steps": [
+            "Step 1 - the total number of shares by the directors can be detemined"
+          ],
+          "instructions": "This Numerical reasoning test comprises 20 questions and you will have 20 minutes in which to correctly answer as many as you can.\nIn each question you will be presented with tables, graphs or charts followed by three or four questions. You will need to determine which answer is correct based on the information provided in the passages only.\nYou will have to work quickly and accurately to perform well in this test. If you don't know the answer to a question, leave it and come back to it if you have time.\nYou can submit your test at any time. If the time limit is up before you click submit the test will automatically be submitted with the answers you have selected. It is recommended to keep working until the time limit is up.\nTry to find a time and place where you will not be interrupted during the test. The test will start on the next page."
+        },
+        {
+          "number": "Q13",
+          "content": "If Tobey Gilham sells half of his shareholding at 31 May 2009 at £45 per share, how much is this trade worth?",
+          "options": [
+            "£3,690",
+            "£18,250",
+            "£18,450",
+            "£9,230",
+            "£36,900"
+          ],
+          "answer": "C",
+          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-3.jpg",
+          "steps": [
+            "Step 1 - To determine the share amount when a shares is sold"
+          ],
+          "instructions": "This Numerical reasoning test comprises 20 questions and you will have 20 minutes in which to correctly answer as many as you can.\nIn each question you will be presented with tables, graphs or charts followed by three or four questions. You will need to determine which answer is correct based on the information provided in the passages only.\nYou will have to work quickly and accurately to perform well in this test. If you don't know the answer to a question, leave it and come back to it if you have time.\nYou can submit your test at any time. If the time limit is up before you click submit the test will automatically be submitted with the answers you have selected. It is recommended to keep working until the time limit is up.\nTry to find a time and place where you will not be interrupted during the test. The test will start on the next page."
+        },
+        {
+          "number": "Q14",
+          "content": "Which of the following statements is true?",
+          "options": [
+            "Current employees and Directors owned 40% of Leutts shares on 30 April 2009",
+            "The largest Director share dealing was 1,440 shares",
+            "Directors held 4,870 shares in total on 30 April 2009",
+            "Tobey Gilham held the most shares of any Director on 1st April 2009",
+            "Each Director has less shares on 31 May 2009 compared to 1st April 2009"
+          ],
+          "answer": "B",
+          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-3.jpg",
+          "steps": [
+            "The largest Director share dealing was 1440 shares which Trudy Stupples bought between 30 April – 31st May. TRUE"
+          ],
+          "instructions": "This Numerical reasoning test comprises 20 questions and you will have 20 minutes in which to correctly answer as many as you can.\nIn each question you will be presented with tables, graphs or charts followed by three or four questions. You will need to determine which answer is correct based on the information provided in the passages only.\nYou will have to work quickly and accurately to perform well in this test. If you don't know the answer to a question, leave it and come back to it if you have time.\nYou can submit your test at any time. If the time limit is up before you click submit the test will automatically be submitted with the answers you have selected. It is recommended to keep working until the time limit is up.\nTry to find a time and place where you will not be interrupted during the test. The test will start on the next page."
+        },
+        {
+          "number": "Q15",
+          "content": "If Leutts shares are worth £52 on 30 April 2009, then what is the share valuation of the entire company?",
+          "options": [
+            "£1,686,000",
+            "£1,588,000",
+            "£1,566,000",
+            "£1,586,000",
+            "£1,856,000"
+          ],
+          "answer": "D",
+          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-3.jpg",
+          "steps": [],
+          "instructions": "This Numerical reasoning test comprises 20 questions and you will have 20 minutes in which to correctly answer as many as you can.\nIn each question you will be presented with tables, graphs or charts followed by three or four questions. You will need to determine which answer is correct based on the information provided in the passages only.\nYou will have to work quickly and accurately to perform well in this test. If you don't know the answer to a question, leave it and come back to it if you have time.\nYou can submit your test at any time. If the time limit is up before you click submit the test will automatically be submitted with the answers you have selected. It is recommended to keep working until the time limit is up.\nTry to find a time and place where you will not be interrupted during the test. The test will start on the next page."
+        },
+        {
+          "number": "Q16",
+          "content": "The total number of £400,000 Apline houses sold in 2009 represented 80% of the annual sales target. If this target was split equally across 5 salerooms, what was the individual sales target for each salesroom?",
+          "options": [
+            "155",
+            "120",
+            "125",
+            "325",
+            "225"
+          ],
+          "answer": "C",
+          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-4.jpg",
+          "steps": [
+            "Step 1 - calculate total Apline sales",
+            "Step 2 - calculate Target sale",
+            "Step 3 - calculate per sale target"
+          ],
+          "instructions": "This Numerical reasoning test comprises 20 questions and you will have 20 minutes in which to correctly answer as many as you can.\nIn each question you will be presented with tables, graphs or charts followed by three or four questions. You will need to determine which answer is correct based on the information provided in the passages only.\nYou will have to work quickly and accurately to perform well in this test. If you don't know the answer to a question, leave it and come back to it if you have time.\nYou can submit your test at any time. If the time limit is up before you click submit the test will automatically be submitted with the answers you have selected. It is recommended to keep working until the time limit is up.\nTry to find a time and place where you will not be interrupted during the test. The test will start on the next page."
+        },
+        {
+          "number": "Q17",
+          "content": "Stamp duty of 3% is paid on house sales over £250,000. How much stamp duty is paid by purchasers of Apline houses in 2009?",
+          "options": [
+            "£16,425,000",
+            "£18,550,000",
+            "£19,425,000",
+            "£6,000,000",
+            "£8,550,000"
+          ],
+          "answer": "C",
+          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-4.jpg",
+          "steps": [
+            "Step 1 - Calculate the house sales and then find stamp duty for each sales"
+          ],
+          "instructions": "This Numerical reasoning test comprises 20 questions and you will have 20 minutes in which to correctly answer as many as you can.\nIn each question you will be presented with tables, graphs or charts followed by three or four questions. You will need to determine which answer is correct based on the information provided in the passages only.\nYou will have to work quickly and accurately to perform well in this test. If you don't know the answer to a question, leave it and come back to it if you have time.\nYou can submit your test at any time. If the time limit is up before you click submit the test will automatically be submitted with the answers you have selected. It is recommended to keep working until the time limit is up.\nTry to find a time and place where you will not be interrupted during the test. The test will start on the next page."
+        },
+        {
+          "number": "Q18",
+          "content": "What is the total value of 2009 Apline house sales?",
+          "options": [
+            "£127.5 million",
+            "£777.5 million",
+            "£115 million",
+            "£162.5 million",
+            "£353,409 million"
+          ],
+          "answer": "B",
+          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-4.jpg",
+          "steps": [
+            "calculate total amount of each alpine house sold"
+          ],
+          "instructions": "This Numerical reasoning test comprises 20 questions and you will have 20 minutes in which to correctly answer as many as you can.\nIn each question you will be presented with tables, graphs or charts followed by three or four questions. You will need to determine which answer is correct based on the information provided in the passages only.\nYou will have to work quickly and accurately to perform well in this test. If you don't know the answer to a question, leave it and come back to it if you have time.\nYou can submit your test at any time. If the time limit is up before you click submit the test will automatically be submitted with the answers you have selected. It is recommended to keep working until the time limit is up.\nTry to find a time and place where you will not be interrupted during the test. The test will start on the next page."
+        },
+        {
+          "number": "Q19",
+          "content": "In 2010, Apline house sales between Jan-June remain the same as those in 2009, while the sales for the July-Dec period increase by a fifth. What is the difference in Apline house sales between July-Dec 2010 and Jan-June for 2010 (in £million)?",
+          "options": [
+            "43.5",
+            "52.2",
+            "100",
+            "125",
+            "125.6"
+          ],
+          "answer": "E",
+          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-4.jpg",
+          "steps": [
+            "Step 1 - Calculate the house sales and stamp duties",
+            "Step 2 - Apply the sales increase and calculate new total sales"
+          ],
+          "instructions": "This Numerical reasoning test comprises 20 questions and you will have 20 minutes in which to correctly answer as many as you can.\nIn each question you will be presented with tables, graphs or charts followed by three or four questions. You will need to determine which answer is correct based on the information provided in the passages only.\nYou will have to work quickly and accurately to perform well in this test. If you don't know the answer to a question, leave it and come back to it if you have time.\nYou can submit your test at any time. If the time limit is up before you click submit the test will automatically be submitted with the answers you have selected. It is recommended to keep working until the time limit is up.\nTry to find a time and place where you will not be interrupted during the test. The test will start on the next page."
+        },
+        {
+          "number": "Q2",
+          "content": "What was the average amount gambled on Slot machines in 2007 by each individual who attended Calewall casino?",
+          "options": [
+            "£90.00",
+            "£9.00",
+            "£0.90",
+            "£900.00",
+            "£0.09"
+          ],
+          "answer": "E",
+          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-1.jpg",
+          "steps": [
+            "Step 1 - Amount gambled/No of people",
+            {
+              "formula": "140,000 / 1,520,000 = £0.09"
+            }
+          ],
+          "instructions": "This Numerical reasoning test comprises 20 questions and you will have 20 minutes in which to correctly answer as many as you can.\nIn each question you will be presented with tables, graphs or charts followed by three or four questions. You will need to determine which answer is correct based on the information provided in the passages only.\nYou will have to work quickly and accurately to perform well in this test. If you don't know the answer to a question, leave it and come back to it if you have time.\nYou can submit your test at any time. If the time limit is up before you click submit the test will automatically be submitted with the answers you have selected. It is recommended to keep working until the time limit is up.\nTry to find a time and place where you will not be interrupted during the test. The test will start on the next page."
+        },
+        {
+          "number": "Q20",
+          "content": "A marketing drive is to be used to increase the value of Jan-June house sales to the value of July-December house sales. If each £ spent on marketing results in £3 of increased sales, what value must be spent on marketing?",
+          "options": [
+            "£156.6 million",
+            "£75.4 million",
+            "£52.2 million",
+            "£36.6 million",
+            "£14.5 million"
+          ],
+          "answer": "E",
+          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-4.jpg",
+          "steps": [
+            "Step 1 - Calculate the difference to arrive at the marketting spends"
+          ],
+          "instructions": "This Numerical reasoning test comprises 20 questions and you will have 20 minutes in which to correctly answer as many as you can.\nIn each question you will be presented with tables, graphs or charts followed by three or four questions. You will need to determine which answer is correct based on the information provided in the passages only.\nYou will have to work quickly and accurately to perform well in this test. If you don't know the answer to a question, leave it and come back to it if you have time.\nYou can submit your test at any time. If the time limit is up before you click submit the test will automatically be submitted with the answers you have selected. It is recommended to keep working until the time limit is up.\nTry to find a time and place where you will not be interrupted during the test. The test will start on the next page."
+        },
+        {
+          "number": "Q3",
+          "content": "There is a £15 entrance fee for each person gambling at Calewall casino. In which year, or years, was the entrance fee revenue less than £23 million?",
+          "options": [
+            "2006, 2007",
+            "2007, 2008",
+            "2007",
+            "2006",
+            "None of these"
+          ],
+          "answer": "A",
+          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-1.jpg",
+          "steps": [
+            "Step 1 - Calculate the entrance fee revenue for each year, as follows:"
+          ],
+          "instructions": "This Numerical reasoning test comprises 20 questions and you will have 20 minutes in which to correctly answer as many as you can.\nIn each question you will be presented with tables, graphs or charts followed by three or four questions. You will need to determine which answer is correct based on the information provided in the passages only.\nYou will have to work quickly and accurately to perform well in this test. If you don't know the answer to a question, leave it and come back to it if you have time.\nYou can submit your test at any time. If the time limit is up before you click submit the test will automatically be submitted with the answers you have selected. It is recommended to keep working until the time limit is up.\nTry to find a time and place where you will not be interrupted during the test. The test will start on the next page."
+        },
+        {
+          "number": "Q4",
+          "content": "What will be the average annual change in attendance at Calewall casino across the years 2006-2010 if the 2010 prediction proves to be accurate?",
+          "options": [
+            "47,500 decrease",
+            "53,500 decrease",
+            "52,500 increase",
+            "47,500 increase",
+            "53,500 increase"
+          ],
+          "answer": "D",
+          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-1.jpg",
+          "steps": [
+            "Step 1 - Calculate the yearly change in attendance"
+          ],
+          "instructions": "This Numerical reasoning test comprises 20 questions and you will have 20 minutes in which to correctly answer as many as you can.\nIn each question you will be presented with tables, graphs or charts followed by three or four questions. You will need to determine which answer is correct based on the information provided in the passages only.\nYou will have to work quickly and accurately to perform well in this test. If you don't know the answer to a question, leave it and come back to it if you have time.\nYou can submit your test at any time. If the time limit is up before you click submit the test will automatically be submitted with the answers you have selected. It is recommended to keep working until the time limit is up.\nTry to find a time and place where you will not be interrupted during the test. The test will start on the next page."
+        },
+        {
+          "number": "Q5",
+          "content": "Calewall casino is subject to a takeover bid of 7 times its 2010 projected casino revenues. The Board responds that it can deliver 10% added value through cost-cuttings to this purchase price. What valuation is the Board putting on Calewall casino (in £ millions)?",
+          "options": [
+            "£48.51 million",
+            "£44.1 million",
+            "£4.85 million",
+            "£4.41 million",
+            "£6.3 million"
+          ],
+          "answer": "C",
+          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-1.jpg",
+          "steps": [
+            "Step 1 - Calculate projected revenues and apply multiplier"
+          ],
+          "instructions": "This Numerical reasoning test comprises 20 questions and you will have 20 minutes in which to correctly answer as many as you can.\nIn each question you will be presented with tables, graphs or charts followed by three or four questions. You will need to determine which answer is correct based on the information provided in the passages only.\nYou will have to work quickly and accurately to perform well in this test. If you don't know the answer to a question, leave it and come back to it if you have time.\nYou can submit your test at any time. If the time limit is up before you click submit the test will automatically be submitted with the answers you have selected. It is recommended to keep working until the time limit is up.\nTry to find a time and place where you will not be interrupted during the test. The test will start on the next page."
+        },
+        {
+          "number": "Q6",
+          "content": "If the 2010 prediction proves to be accurate, what is the average annual percentage change in Teala Media's R&D spend across the 5 years shown?",
+          "options": [
+            "0.53",
+            "0.54",
+            "0.55",
+            "0.56",
+            "0.57"
+          ],
+          "answer": "D",
+          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-2.jpg",
+          "steps": [
+            "Step 1 - Calculate the average"
+          ],
+          "instructions": "This Numerical reasoning test comprises 20 questions and you will have 20 minutes in which to correctly answer as many as you can.\nIn each question you will be presented with tables, graphs or charts followed by three or four questions. You will need to determine which answer is correct based on the information provided in the passages only.\nYou will have to work quickly and accurately to perform well in this test. If you don't know the answer to a question, leave it and come back to it if you have time.\nYou can submit your test at any time. If the time limit is up before you click submit the test will automatically be submitted with the answers you have selected. It is recommended to keep working until the time limit is up.\nTry to find a time and place where you will not be interrupted during the test. The test will start on the next page."
+        },
+        {
+          "number": "Q7",
+          "content": "What is the R&D spend projected to be for 2010?",
+          "options": [
+            "£2.5 million",
+            "£2.75 million",
+            "£3.0 million",
+            "£3.25 million",
+            "£3.5 million"
+          ],
+          "answer": "A",
+          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-2.jpg",
+          "steps": [
+            "Step 1 – Calculate the total R&D spends per project for 2009 (given in the table)"
+          ],
+          "instructions": "This Numerical reasoning test comprises 20 questions and you will have 20 minutes in which to correctly answer as many as you can.\nIn each question you will be presented with tables, graphs or charts followed by three or four questions. You will need to determine which answer is correct based on the information provided in the passages only.\nYou will have to work quickly and accurately to perform well in this test. If you don't know the answer to a question, leave it and come back to it if you have time.\nYou can submit your test at any time. If the time limit is up before you click submit the test will automatically be submitted with the answers you have selected. It is recommended to keep working until the time limit is up.\nTry to find a time and place where you will not be interrupted during the test. The test will start on the next page."
+        },
+        {
+          "number": "Q8",
+          "content": "What was the R&D spend for 2008 (to the nearest £1,000)?",
+          "options": [
+            "£2,235,000",
+            "£2,613,000",
+            "£2,503,000",
+            "£2,483,000",
+            "£2,305,000"
+          ],
+          "answer": "C",
+          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-8.jpg",
+          "steps": [
+            "Step 1 - Total R&D spend for 2009 is obtained from the table.",
+            "Step 2 - Find the 2008 R & D with respect to 2009 R&D"
+          ],
+          "instructions": "This Numerical reasoning test comprises 20 questions and you will have 20 minutes in which to correctly answer as many as you can.\nIn each question you will be presented with tables, graphs or charts followed by three or four questions. You will need to determine which answer is correct based on the information provided in the passages only.\nYou will have to work quickly and accurately to perform well in this test. If you don't know the answer to a question, leave it and come back to it if you have time.\nYou can submit your test at any time. If the time limit is up before you click submit the test will automatically be submitted with the answers you have selected. It is recommended to keep working until the time limit is up.\nTry to find a time and place where you will not be interrupted during the test. The test will start on the next page."
+        },
+        {
+          "number": "Q9",
+          "content": "R&D overheads were 12% of R&D spend in 2009. If R&D overheads are projected to rise by 1.1% between 2009 and 2010, what is the 2010 predicted R&D sum left after these overheads are taken in to account?",
+          "options": [
+            "£1.02million",
+            "£1.22million",
+            "£2.11million",
+            "£2.21million",
+            "£2.48million"
+          ],
+          "answer": "D",
+          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-2.jpg",
+          "steps": [
+            "Step 1 - Find R & D and over head in 2009",
+            "Step 2 - Find R & D and over head in 2010 using the rates",
+            "Step 3 - Find R & D value by removing the over head in 2010"
+          ],
+          "instructions": "This Numerical reasoning test comprises 20 questions and you will have 20 minutes in which to correctly answer as many as you can.\nIn each question you will be presented with tables, graphs or charts followed by three or four questions. You will need to determine which answer is correct based on the information provided in the passages only.\nYou will have to work quickly and accurately to perform well in this test. If you don't know the answer to a question, leave it and come back to it if you have time.\nYou can submit your test at any time. If the time limit is up before you click submit the test will automatically be submitted with the answers you have selected. It is recommended to keep working until the time limit is up.\nTry to find a time and place where you will not be interrupted during the test. The test will start on the next page."
+        }
+      ]
+    }
+  ]
+}

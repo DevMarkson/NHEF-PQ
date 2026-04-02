@@ -22,6 +22,7 @@ export default function PracticeMode() {
   const [availableTests, setAvailableTests] = useState<{ [key: string]: string[] }>({
     verbal: [],
     abstract: [],
+    numerical: [],
   });
   const [selectedCategory, setSelectedCategory] = useState<string>("");
   const [selectedTest, setSelectedTest] = useState<string>("");
@@ -111,6 +112,13 @@ export default function PracticeMode() {
     setIsFinished(false);
   };
 
+  // Scroll to top when question changes
+  useEffect(() => {
+    if (selectedTest) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [currentQuestionIndex, selectedTest]);
+
   useEffect(() => {
     // Fetch test section names for instant selection
     fetch("/api/questions?metadata=true")
@@ -118,7 +126,8 @@ export default function PracticeMode() {
       .then((data: string[]) => {
         const verbalTests = data.filter((test) => test.toLowerCase().includes("verbal"));
         const abstractTests = data.filter((test) => test.toLowerCase().includes("abstract"));
-        setAvailableTests({ verbal: verbalTests, abstract: abstractTests });
+        const numericalTests = data.filter((test) => test.toLowerCase().includes("numerical"));
+        setAvailableTests({ verbal: verbalTests, abstract: abstractTests, numerical: numericalTests });
         setLoading(false);
       })
       .catch((err) => {
@@ -165,7 +174,7 @@ export default function PracticeMode() {
   return (
     <div className="w-full max-w-4xl mx-auto px-6 py-16 md:py-24 min_h-screen">
       <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
           Practice <span className="text-brand-500">Environment</span>
         </h1>
         <p className="text-text-secondary max-w-2xl mx-auto text-base md:text-lg">
@@ -188,6 +197,7 @@ export default function PracticeMode() {
             <option value="">Select Category</option>
             <option value="verbal">Verbal Reasoning</option>
             <option value="abstract">Abstract Reasoning</option>
+            <option value="numerical">Numerical Reasoning</option>
           </select>
         </div>
 
@@ -251,16 +261,16 @@ export default function PracticeMode() {
             </div>
           </div>
 
-          <div className="flex justify-center gap-6 pt-8">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 pt-8">
             <button
               onClick={restartSession}
-              className="px-10 py-4 bg-brand-500 hover:bg-brand-600 text-white font-bold rounded-md transition-all hover-lift active:scale-95 shadow-lg"
+              className="w-full sm:w-auto px-6 sm:px-10 py-4 bg-brand-500 hover:bg-brand-600 text-white font-bold rounded-md transition-all hover-lift active:scale-95 shadow-lg"
             >
               Re-attempt Test
             </button>
             <button
               onClick={() => setSelectedTest("")}
-              className="px-10 py-4 glass text-text-secondary hover:text-white font-bold rounded-md transition-all hover-lift active:scale-95"
+              className="w-full sm:w-auto px-6 sm:px-10 py-4 glass text-text-secondary hover:text-white font-bold rounded-md transition-all hover-lift active:scale-95"
             >
               New Focus Area
             </button>
@@ -309,22 +319,23 @@ export default function PracticeMode() {
                 </div>
               )}
 
-              {/* Image for Abstract */}
+              {/* Image for Abstract/Numerical */}
               {currentQuestion.image && (
-                <div className="mb-12 flex justify-center p-8 bg-black/30 rounded-lg border border-white/5 shadow-inner">
+                <div className="mb-12 relative w-full overflow-hidden rounded-lg border border-white/5 bg-black/20 p-2 shadow-inner">
                   <Image
                     src={currentQuestion.image}
-                    alt={`Question Visualization ${currentQuestion.number}`}
-                    width={400}
-                    height={400}
-                    className="max-h-[400px] object-contain rounded-sm"
+                    alt={`Resource Visual ${currentQuestion.number}`}
+                    width={800}
+                    height={450}
+                    layout="responsive"
+                    className="rounded-md object-contain"
                   />
                 </div>
               )}
 
               <div className="space-y-4 mb-10">
                 <span className="text-[10px] font-bold text-brand-400/60 uppercase tracking-widest">Question {currentQuestion.number}</span>
-                <h2 className="text-2xl md:text-3xl font-semibold text-text-primary leading-tight tracking-tight">
+                <h2 className="text-lg sm:text-xl md:text-3xl font-semibold text-text-primary leading-tight tracking-tight">
                   {currentQuestion.content}
                 </h2>
               </div>
@@ -397,11 +408,11 @@ export default function PracticeMode() {
             </div>
 
             {/* Navigation */}
-            <div className="flex justify-between items-center gap-6">
+            <div className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-4 sm:gap-6">
               <button
                 onClick={handlePrev}
                 disabled={currentQuestionIndex === 0}
-                className="flex items-center gap-3 px-8 py-4 glass text-text-secondary hover:text-white rounded-lg transition-all disabled:opacity-20 text-sm font-bold border-white/10 hover-lift"
+                className="flex items-center justify-center gap-3 px-6 sm:px-8 py-4 glass text-text-secondary hover:text-white rounded-lg transition-all disabled:opacity-20 text-sm font-bold border-white/10 hover-lift"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg>
                 Previous Evaluation
@@ -410,14 +421,14 @@ export default function PracticeMode() {
               {currentQuestionIndex === filteredQuestions.length - 1 ? (
                 <button
                   onClick={finishSession}
-                  className="px-10 py-4 bg-brand-500 hover:bg-brand-600 text-white font-bold rounded-lg transition-all active:scale-[0.98] shadow-[0_8px_30px_rgb(16,185,129,0.3)] text-sm hover-lift"
+                  className="px-6 sm:px-10 py-4 bg-brand-500 hover:bg-brand-600 text-white font-bold rounded-lg transition-all active:scale-[0.98] shadow-[0_8px_30px_rgb(16,185,129,0.3)] text-sm hover-lift"
                 >
                   Finalize Preparation
                 </button>
               ) : (
                 <button
                   onClick={handleNext}
-                  className="flex items-center gap-3 px-10 py-4 bg-brand-500 hover:bg-brand-600 text-white font-bold rounded-lg transition-all active:scale-[0.98] shadow-[0_8px_30px_rgb(16,185,129,0.3)] text-sm hover-lift"
+                  className="flex items-center justify-center gap-3 px-6 sm:px-10 py-4 bg-brand-500 hover:bg-brand-600 text-white font-bold rounded-lg transition-all active:scale-[0.98] shadow-[0_8px_30px_rgb(16,185,129,0.3)] text-sm hover-lift"
                 >
                   Continue Preparation
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
@@ -444,7 +455,7 @@ export default function PracticeMode() {
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2 sm:gap-3">
                 {questions.map((_, idx) => {
                   const isAnswered = !!userAnswers[idx];
                   const isCurrent = currentQuestionIndex === idx;
@@ -458,7 +469,7 @@ export default function PracticeMode() {
                     <button
                       key={idx}
                       onClick={() => jumpToQuestion(idx)}
-                      className={`w-12 h-12 flex items-center justify-center rounded-lg border text-sm font-bold transition-all ${boxStyles}`}
+                      className={`w-9 h-9 sm:w-12 sm:h-12 flex items-center justify-center rounded-lg border text-xs sm:text-sm font-bold transition-all ${boxStyles}`}
                     >
                       {idx + 1}
                     </button>

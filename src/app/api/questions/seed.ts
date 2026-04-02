@@ -1,8 +1,9 @@
+import 'dotenv/config';
 // src/scripts/seed.ts
 import fs from 'fs';
 import path from 'path';
-import dbConnect from '../../../lib/dbConnect.js';
-import Question from '../../../models/Question.js';
+import dbConnect from '../../../lib/dbConnect.ts';
+import Question from '../../../models/Question.ts';
 
 async function seedData() {
   await dbConnect();
@@ -12,21 +13,29 @@ async function seedData() {
   const jsonData = fs.readFileSync(filePath, 'utf-8');
   const questions = JSON.parse(jsonData);
 
-  // Clear existing questions
-  await Question.deleteMany({});
+  // Clear existing questions - DISABLED for additive seeding
+  // await Question.deleteMany({});
   
-  // Insert questions
+  // Insert or Update questions (Additive/Upsert)
   for (const section of questions.sections) {
     for (const question of section.questions) {
-      await Question.create({
-        testSection: section.testSection,
-        passage: section.passage,
-        number: question.number,
-        content: question.content,
-        options: question.options,
-        answer: question.answer,
-        explanation: question.explanation,
-      });
+      await Question.findOneAndUpdate(
+        { 
+          testSection: section.testSection, 
+          number: question.number 
+        },
+        {
+          testSection: section.testSection,
+          passage: section.passage,
+          number: question.number,
+          content: question.content,
+          options: question.options,
+          answer: question.answer,
+          explanation: question.explanation,
+          image: section.image || question.image || "", // Clear image if not provided in JSON
+        },
+        { upsert: true, new: true }
+      );
     }
   }
 
