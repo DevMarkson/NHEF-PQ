@@ -196,6 +196,7 @@ export default function QuestionBank() {
                                 height={450}
                                 layout="responsive"
                                 className="rounded-sm"
+                                unoptimized={true}
                               />
                             </div>
                           )}

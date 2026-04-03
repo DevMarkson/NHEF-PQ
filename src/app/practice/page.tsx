@@ -329,6 +329,7 @@ export default function PracticeMode() {
                     height={450}
                     layout="responsive"
                     className="rounded-md object-contain"
+                    unoptimized={true}
                   />
                 </div>
               )}
