@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
         port: "",
         pathname: "/**",
       },
+      
       {
         protocol: "https",
         hostname: "nhefpq.vercel.app",
