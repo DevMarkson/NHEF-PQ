@@ -1354,7 +1354,7 @@
             "None of these"
           ],
           "answer": "D",
-          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-1.jpg",
+          "image": "/numerical-reasoning-1/question-1.jpg",
           "steps": [
             "Step 1 - Calculate the totals for Slot machines, Roulette, Other table games \\n\n            Slot machines = 1.3 + 1.4 + 1.8 + 1.5 = 6\", \\n\n            Roulette = 0.8 + 0.6 +0.6 +0.7 = 2.7\", \\n\n            Other table games = 4.4 + 4.2 + 4.5 + 4.8 = 17.9\", \\n\n            Step 2 - Calculate the difference\", \\n\n            17.9 – 6 – 2.7 = 9.2\", \\n\n            Step 3 – Put into £millions = 0.92\", \\n\n            Thus the correct answer is (D) 0.92\""
           ],
@@ -1371,7 +1371,7 @@
             "None of These"
           ],
           "answer": "B",
-          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-2.jpg",
+          "image": "/numerical-reasoning-1/question-2.jpg",
           "steps": [
             "Step 1 - Find Additional Charges"
           ],
@@ -1388,7 +1388,7 @@
             "Cannot tell from data"
           ],
           "answer": "A",
-          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-3.jpg",
+          "image": "/numerical-reasoning-1/question-3.jpg",
           "steps": [
             "Step 1 - calculate share holding by directors",
             "Step 2 - calculate net holding by directors"
@@ -1406,7 +1406,7 @@
             "Tobey Gilham"
           ],
           "answer": "B",
-          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-3.jpg",
+          "image": "/numerical-reasoning-1/question-3.jpg",
           "steps": [
             "Step 1 - the total number of shares by the directors can be detemined"
           ],
@@ -1423,7 +1423,7 @@
             "£36,900"
           ],
           "answer": "C",
-          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-3.jpg",
+          "image": "/numerical-reasoning-1/question-3.jpg",
           "steps": [
             "Step 1 - To determine the share amount when a shares is sold"
           ],
@@ -1440,7 +1440,7 @@
             "Each Director has less shares on 31 May 2009 compared to 1st April 2009"
           ],
           "answer": "B",
-          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-3.jpg",
+          "image": "/numerical-reasoning-1/question-3.jpg",
           "steps": [
             "The largest Director share dealing was 1440 shares which Trudy Stupples bought between 30 April – 31st May. TRUE"
           ],
@@ -1457,7 +1457,7 @@
             "£1,856,000"
           ],
           "answer": "D",
-          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-3.jpg",
+          "image": "/numerical-reasoning-1/question-3.jpg",
           "steps": [],
           "instructions": "This Numerical reasoning test comprises 20 questions and you will have 20 minutes in which to correctly answer as many as you can.\nIn each question you will be presented with tables, graphs or charts followed by three or four questions. You will need to determine which answer is correct based on the information provided in the passages only.\nYou will have to work quickly and accurately to perform well in this test. If you don't know the answer to a question, leave it and come back to it if you have time.\nYou can submit your test at any time. If the time limit is up before you click submit the test will automatically be submitted with the answers you have selected. It is recommended to keep working until the time limit is up.\nTry to find a time and place where you will not be interrupted during the test. The test will start on the next page."
         },
@@ -1472,7 +1472,7 @@
             "225"
           ],
           "answer": "C",
-          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-4.jpg",
+          "image": "/numerical-reasoning-1/question-4.jpg",
           "steps": [
             "Step 1 - calculate total Apline sales",
             "Step 2 - calculate Target sale",
@@ -1491,7 +1491,7 @@
             "£8,550,000"
           ],
           "answer": "C",
-          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-4.jpg",
+          "image": "/numerical-reasoning-1/question-4.jpg",
           "steps": [
             "Step 1 - Calculate the house sales and then find stamp duty for each sales"
           ],
@@ -1508,7 +1508,7 @@
             "£353,409 million"
           ],
           "answer": "B",
-          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-4.jpg",
+          "image": "/numerical-reasoning-1/question-4.jpg",
           "steps": [
             "calculate total amount of each alpine house sold"
           ],
@@ -1525,7 +1525,7 @@
             "125.6"
           ],
           "answer": "E",
-          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-4.jpg",
+          "image": "/numerical-reasoning-1/question-4.jpg",
           "steps": [
             "Step 1 - Calculate the house sales and stamp duties",
             "Step 2 - Apply the sales increase and calculate new total sales"
@@ -1543,7 +1543,7 @@
             "£0.09"
           ],
           "answer": "E",
-          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-1.jpg",
+          "image": "/numerical-reasoning-1/question-1.jpg",
           "steps": [
             "Step 1 - Amount gambled/No of people",
             {
@@ -1563,7 +1563,7 @@
             "£14.5 million"
           ],
           "answer": "E",
-          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-4.jpg",
+          "image": "/numerical-reasoning-1/question-4.jpg",
           "steps": [
             "Step 1 - Calculate the difference to arrive at the marketting spends"
           ],
@@ -1580,7 +1580,7 @@
             "None of these"
           ],
           "answer": "A",
-          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-1.jpg",
+          "image": "/numerical-reasoning-1/question-1.jpg",
           "steps": [
             "Step 1 - Calculate the entrance fee revenue for each year, as follows:"
           ],
@@ -1597,7 +1597,7 @@
             "53,500 increase"
           ],
           "answer": "D",
-          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-1.jpg",
+          "image": "/numerical-reasoning-1/question-1.jpg",
           "steps": [
             "Step 1 - Calculate the yearly change in attendance"
           ],
@@ -1614,7 +1614,7 @@
             "£6.3 million"
           ],
           "answer": "C",
-          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-1.jpg",
+          "image": "/numerical-reasoning-1/question-1.jpg",
           "steps": [
             "Step 1 - Calculate projected revenues and apply multiplier"
           ],
@@ -1631,7 +1631,7 @@
             "0.57"
           ],
           "answer": "D",
-          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-2.jpg",
+          "image": "/numerical-reasoning-1/question-2.jpg",
           "steps": [
             "Step 1 - Calculate the average"
           ],
@@ -1648,7 +1648,7 @@
             "£3.5 million"
           ],
           "answer": "A",
-          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-2.jpg",
+          "image": "/numerical-reasoning-1/question-2.jpg",
           "steps": [
             "Step 1 – Calculate the total R&D spends per project for 2009 (given in the table)"
           ],
@@ -1665,7 +1665,7 @@
             "£2,305,000"
           ],
           "answer": "C",
-          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-8.jpg",
+          "image": "/numerical-reasoning-1/question-2.jpg",
           "steps": [
             "Step 1 - Total R&D spend for 2009 is obtained from the table.",
             "Step 2 - Find the 2008 R & D with respect to 2009 R&D"
@@ -1683,7 +1683,7 @@
             "£2.48million"
           ],
           "answer": "D",
-          "image": "https://nhefpq.vercel.app/numerical-reasoning-1/question-2.jpg",
+          "image": "/numerical-reasoning-1/question-2.jpg",
           "steps": [
             "Step 1 - Find R & D and over head in 2009",
             "Step 2 - Find R & D and over head in 2010 using the rates",
