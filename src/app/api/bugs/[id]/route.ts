@@ -27,3 +27,21 @@ export async function PATCH(
     return NextResponse.json({ error: 'Failed to update bug' }, { status: 500 });
   }
 }
+export async function DELETE(
+  request: Request,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  await dbConnect();
+  try {
+    const { id } = await params;
+    const deletedBug = await Bug.findByIdAndDelete(id);
+
+    if (!deletedBug) {
+      return NextResponse.json({ error: 'Bug not found' }, { status: 404 });
+    }
+
+    return NextResponse.json({ message: 'Bug deleted successfully' });
+  } catch {
+    return NextResponse.json({ error: 'Failed to delete bug' }, { status: 500 });
+  }
+}

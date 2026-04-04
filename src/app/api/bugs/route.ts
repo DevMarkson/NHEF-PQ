@@ -3,10 +3,14 @@ import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/dbConnect';
 import Bug from '@/models/Bug';
 
-export async function GET() {
+export async function GET(request: Request) {
   await dbConnect();
+  const { searchParams } = new URL(request.url);
+  const showFixed = searchParams.get('showFixed') === 'true';
+  const filter = showFixed ? {} : { status: { $ne: 'fixed' } };
+
   try {
-    const bugs = await Bug.find({}).sort({ createdAt: -1 });
+    const bugs = await Bug.find(filter).sort({ createdAt: -1 });
     return NextResponse.json(bugs);
   } catch {
     return NextResponse.json({ error: 'Failed to fetch bugs' }, { status: 500 });

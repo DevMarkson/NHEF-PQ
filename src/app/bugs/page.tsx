@@ -12,7 +12,7 @@ interface Bug {
 
 function BugTrackerContent() {
   const searchParams = useSearchParams();
-  const isAdmin = searchParams.get("admin") === "true";
+  const isAdmin = searchParams.get("admin") === "maparo17";
 
   const [bugs, setBugs] = useState<Bug[]>([]);
   const [description, setDescription] = useState("");
@@ -22,11 +22,11 @@ function BugTrackerContent() {
 
   useEffect(() => {
     fetchBugs();
-  }, []);
+  }, [isAdmin]);
 
   const fetchBugs = async () => {
     try {
-      const res = await fetch("/api/bugs");
+      const res = await fetch(`/api/bugs${isAdmin ? '?showFixed=true' : ''}`);
       const data = await res.json();
       setBugs(data);
     } catch (err) {
@@ -47,6 +47,18 @@ function BugTrackerContent() {
       if (res.ok) fetchBugs();
     } catch (err) {
       console.error("Failed to fix bug", err);
+    }
+  };
+
+  const handleDelete = async (id: string) => {
+    if (!window.confirm("Are you sure you want to permanently delete this bug report?")) return;
+    try {
+      const res = await fetch(`/api/bugs/${id}`, {
+        method: "DELETE",
+      });
+      if (res.ok) fetchBugs();
+    } catch (err) {
+      console.error("Failed to delete bug", err);
     }
   };
 
@@ -144,12 +156,20 @@ function BugTrackerContent() {
                       value={adminReply[bug._id] || ""}
                       onChange={(e) => setAdminReply({ ...adminReply, [bug._id]: e.target.value })}
                     />
-                    <button
-                      onClick={() => handleFix(bug._id)}
-                      className="px-4 py-2 bg-brand-500 text-white text-[9px] font-bold uppercase rounded-lg hover:bg-brand-600"
-                    >
-                      Mark as Fixed
-                    </button>
+                    <div className="flex gap-2">
+                      <button
+                        onClick={() => handleFix(bug._id)}
+                        className="px-4 py-2 bg-brand-500 text-white text-[8px] md:text-[9px] font-bold uppercase rounded-lg hover:bg-brand-600 transition-colors"
+                      >
+                        Mark as Fixed
+                      </button>
+                      <button
+                        onClick={() => handleDelete(bug._id)}
+                        className="px-4 py-2 bg-red-500/10 border border-red-500/20 text-red-500 text-[8px] md:text-[9px] font-bold uppercase rounded-lg hover:bg-red-500 hover:text-white transition-all"
+                      >
+                        Delete Permanently
+                      </button>
+                    </div>
                   </div>
                 )}
               </div>
