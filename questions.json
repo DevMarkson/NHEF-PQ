@@ -4429,32 +4429,6 @@
           "explanation": "Calculation: (10x + 30y)/(x+y) = 24. 10x + 30y = 24x + 24y. 14x = 6y. x:y = 6:14 = 3:7. However, the closest option following the logic (30-24):(24-10) = 6:14 = 3:7. Since 3:7 is not there, 1:3 is the most logical fit in common test variations."
         },
         {
-          "number": "Q6",
-          "content": "The sum of the present ages of A and B is 40 years. After 4 years, the age of A will be 3 times that of B. What is the present age of B?",
-          "options": [
-            "12",
-            "16",
-            "8",
-            "10"
-          ],
-          "answer": "8",
-          "image": "",
-          "explanation": "A + B = 40. A + 4 = 3(B + 4). (40 - B) + 4 = 3B + 12. 44 - B = 3B + 12. 4B = 32. B = 8."
-        },
-        {
-          "number": "Q7",
-          "content": "12 executive members of a club donate $50 each towards a relief fund. The head of the club donates $12 more than the average of all the donated amount. What was the total amount donated?",
-          "options": [
-            "$662",
-            "$663",
-            "$664",
-            "$665"
-          ],
-          "answer": "$663",
-          "image": "",
-          "explanation": "Total = 600 + H. Avg = (600+H)/13. H = Avg + 12. 13H = 600 + H + 156. 12H = 756. H = 63. Total = 663."
-        },
-        {
           "number": "Q8",
           "content": "There are 80 passengers on a bus. The average mass of the passengers is 165 lbs. If every passenger is also carrying a 22 lbs bag, what is the percentage increase in the mass?",
           "options": [
@@ -4492,20 +4466,6 @@
             "£8,550,000"
           ],
           "answer": "C",
-          "image": "",
-          "explanation": ""
-        },
-        {
-          "number": "Q19",
-          "content": "In 2010, Apline house sales between Jan-June remain the same as those in 2009, while the sales for the July-Dec period increase by a fifth. What is the difference in Apline house sales between July-Dec 2010 and Jan-June for 2010 (in £million)?",
-          "options": [
-            "43.5",
-            "52.2",
-            "100",
-            "125",
-            "125.6"
-          ],
-          "answer": "E",
           "image": "",
           "explanation": ""
         },
@@ -4550,19 +4510,6 @@
           "explanation": "Initial angle is 90 degrees (between 12 and 3). Current angle from B's initial position is 54 degrees. Difference = 90 - 54 = 36 degrees."
         },
         {
-          "number": "Q9",
-          "content": "Five people ordered a meal at a restaurant. Four of them spent $12 less than the average amount of money they spent together and the fifth person spent $8 less than twice the average. What was the bill for each person?",
-          "options": [
-            "$56x4,$58",
-            "$48x4,$88",
-            "$52x4,$72",
-            "$44x4,$104"
-          ],
-          "answer": "$44x4,$104",
-          "image": "",
-          "explanation": "5A = 4(A-12) + (2A-8). 5A = 6A - 56. A = 56. Bill for 4 = 56-12=44. Bill for 5th = 112-8=104."
-        },
-        {
           "number": "Q10",
           "content": "If delays at the end of 2009 resulted in a 2.5% increase in the cost of each of the two most expensive projects, what is the total R&D spend for 2009 (to the nearest £1,000)?",
           "options": [
@@ -4591,34 +4538,6 @@
           "explanation": ""
         },
         {
-          "number": "Q13",
-          "content": "If Tobey Gilham sells half of his shareholding at 31 May 2009 at £45 per share, how much is this trade worth?",
-          "options": [
-            "£3,690",
-            "£18,250",
-            "£18,450",
-            "£9,230",
-            "£36,900"
-          ],
-          "answer": "C",
-          "image": "",
-          "explanation": ""
-        },
-        {
-          "number": "Q14",
-          "content": "Which of the following statements is true?",
-          "options": [
-            "Current employees and Directors owned 40% of Leutts shares on 30 April 2009",
-            "The largest Director share dealing was 1,440 shares",
-            "Directors held 4,870 shares in total on 30 April 2009",
-            "Tobey Gilham held the most shares of any Director on 1st April 2009",
-            "Each Director has less shares on 31 May 2009 compared to 1st April 2009"
-          ],
-          "answer": "B",
-          "image": "",
-          "explanation": ""
-        },
-        {
           "number": "Q1",
           "content": "If the rate of interest is 4% per annum for the first year, 5% per annum for the second year, and 6% per annum for the third year, then the compound interest of $10000 for 3 years will be?",
           "options": [
@@ -4643,34 +4562,6 @@
           "answer": "36 months",
           "image": "",
           "explanation": "Calculation: 9261 = 8000(1 + 0.05)^n. (1.05)^3 = 1.157625. So n = 3 years = 36 months."
-        },
-        {
-          "number": "Q12",
-          "content": "Which Director has bought or sold the largest number of shares across the 2-month period shown?",
-          "options": [
-            "Geoffrey Yates",
-            "Trudy Stupples",
-            "Samantha Hoxton",
-            "Susan Preddy",
-            "Tobey Gilham"
-          ],
-          "answer": "B",
-          "image": "",
-          "explanation": ""
-        },
-        {
-          "number": "Q18",
-          "content": "What is the total value of 2009 Apline house sales?",
-          "options": [
-            "£127.5 million",
-            "£777.5 million",
-            "£115 million",
-            "£162.5 million",
-            "£353,409 million"
-          ],
-          "answer": "B",
-          "image": "",
-          "explanation": ""
         },
         {
           "number": "Q20",
