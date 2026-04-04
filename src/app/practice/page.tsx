@@ -26,10 +26,22 @@ export default function PracticeMode() {
   });
   const [selectedCategory, setSelectedCategory] = useState<string>("");
   const [selectedTest, setSelectedTest] = useState<string>("");
+  const [selectedDuration, setSelectedDuration] = useState<number>(0); // 0 means "Auto"
   const [userAnswers, setUserAnswers] = useState<{ [key: number]: string }>({});
   const [timer, setTimer] = useState(0);
   const [isActive, setIsActive] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
+
+  const getInitialTime = (category: string, qCount: number) => {
+    // Standard durations per question based on typical entrance exams
+    const secondsPerQuestion = {
+      numerical: 60, // 1 min per question
+      verbal: 30,    // 30s per question
+      abstract: 45,  // 45s per question
+    };
+    const rate = secondsPerQuestion[category as keyof typeof secondsPerQuestion] || 60;
+    return qCount * rate;
+  };
 
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
@@ -61,20 +73,23 @@ export default function PracticeMode() {
     }
   }, [currentQuestionIndex]);
 
-  // Timer logic
+  // Timer logic - Countdown
   useEffect(() => {
     let interval: ReturnType<typeof setInterval> | null = null;
-    if (isActive && !isFinished) {
+    if (isActive && !isFinished && timer > 0) {
       interval = setInterval(() => {
-        setTimer((prev) => prev + 1);
+        setTimer((prev) => prev - 1);
       }, 1000);
+    } else if (timer === 0 && isActive && !isFinished) {
+      // Auto-finish when time is up
+      finishSession();
     } else if (interval) {
       clearInterval(interval);
     }
     return () => {
       if (interval) clearInterval(interval);
     };
-  }, [isActive, isFinished]);
+  }, [isActive, isFinished, timer]);
 
   // Keyboard shortcuts
   useEffect(() => {
@@ -107,7 +122,8 @@ export default function PracticeMode() {
   const restartSession = () => {
     setCurrentQuestionIndex(0);
     setUserAnswers({});
-    setTimer(0);
+    const initialTime = selectedDuration > 0 ? selectedDuration * 60 : getInitialTime(selectedCategory, questions.length);
+    setTimer(initialTime);
     setIsActive(true);
     setIsFinished(false);
   };
@@ -156,7 +172,8 @@ export default function PracticeMode() {
           setQuestions(data);
           setLoading(false);
           setIsActive(true);
-          setTimer(0);
+          const initialTime = selectedDuration > 0 ? selectedDuration * 60 : getInitialTime(selectedCategory, data.length);
+          setTimer(initialTime);
           setUserAnswers({});
           setIsFinished(false);
         })
@@ -172,7 +189,7 @@ export default function PracticeMode() {
   const currentQuestion = filteredQuestions[currentQuestionIndex];
 
   return (
-    <div className="w-full max-w-4xl mx-auto px-6 py-16 md:py-24 min_h-screen">
+    <div className="w-full max-w-4xl mx-auto px-6 py-16 md:py-24 min-h-screen">
       <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
           Practice <span className="text-brand-500">Environment</span>
@@ -183,10 +200,10 @@ export default function PracticeMode() {
       </div>
 
       {/* Selection Area */}
-      <div className="grid md:grid-cols-2 gap-8 mb-16">
-        <div className="glass p-8 rounded-lg border-white/5 shadow-sm">
+      <div className="grid md:grid-cols-3 gap-6 mb-16">
+        <div className="glass p-6 rounded-lg border-white/5 shadow-sm">
           <label htmlFor="category-select" className="block text-[10px] font-bold text-brand-500 uppercase tracking-[0.2em] mb-4">
-            Step 1: Focus Area
+            Step 1: Category
           </label>
           <select
             id="category-select"
@@ -194,25 +211,42 @@ export default function PracticeMode() {
             onChange={handleCategorySelection}
             className="w-full bg-surface-200 border border-white/10 rounded-md px-4 py-3 text-text-primary text-sm focus:ring-1 focus:ring-brand-500 outline-none transition-all cursor-pointer"
           >
-            <option value="">Select Category</option>
-            <option value="verbal">Verbal Reasoning</option>
-            <option value="abstract">Abstract Reasoning</option>
-            <option value="numerical">Numerical Reasoning</option>
+            <option value="">Select Area</option>
+            <option value="verbal">Verbal</option>
+            <option value="abstract">Abstract</option>
+            <option value="numerical">Numerical</option>
           </select>
         </div>
 
-        <div className={`glass p-8 rounded-lg border-white/5 shadow-sm transition-opacity duration-300 ${!selectedCategory ? 'opacity-40 pointer-events-none' : 'opacity-100'}`}>
+        <div className={`glass p-6 rounded-lg border-white/5 shadow-sm transition-opacity duration-300 ${!selectedCategory ? 'opacity-40 pointer-events-none' : 'opacity-100'}`}>
+          <label htmlFor="duration-select" className="block text-[10px] font-bold text-brand-500 uppercase tracking-[0.2em] mb-4">
+            Step 2: Duration
+          </label>
+          <select
+            id="duration-select"
+            value={selectedDuration}
+            onChange={(e) => setSelectedDuration(parseInt(e.target.value))}
+            className="w-full bg-surface-200 border border-white/10 rounded-md px-4 py-3 text-text-primary text-sm focus:ring-1 focus:ring-brand-500 outline-none transition-all cursor-pointer"
+          >
+            <option value="0">Auto (Calculated)</option>
+            <option value="10">10 Minutes</option>
+            <option value="20">20 Minutes</option>
+            <option value="30">30 Minutes</option>
+            <option value="60">1 Hour</option>
+          </select>
+        </div>
+
+        <div className={`glass p-6 rounded-lg border-white/5 shadow-sm transition-opacity duration-300 ${!selectedCategory ? 'opacity-40 pointer-events-none' : 'opacity-100'}`}>
           <label htmlFor="test-select" className="block text-[10px] font-bold text-brand-500 uppercase tracking-[0.2em] mb-4">
-            Step 2: Specific Test
+            Step 3: Test Bank
           </label>
           <select
             id="test-select"
             value={selectedTest}
             onChange={handleTestSelection}
-            disabled={!selectedCategory}
             className="w-full bg-surface-200 border border-white/10 rounded-md px-4 py-3 text-text-primary text-sm focus:ring-1 focus:ring-brand-500 outline-none transition-all cursor-pointer"
           >
-            <option value="">Select Examination</option>
+            <option value="">Select Test</option>
             {selectedCategory && availableTests[selectedCategory].map((test) => (
               <option key={test} value={test}>
                 {test}
@@ -252,8 +286,10 @@ export default function PracticeMode() {
               </span>
             </div>
             <div className="p-6 bg-white/[0.02] rounded-lg border border-white/5 shadow-sm">
-              <span className="block text-[10px] font-bold text-text-muted uppercase tracking-widest mb-2">Time spent</span>
-              <span className="text-3xl font-mono font-bold text-white">{formatTime(timer)}</span>
+              <span className="block text-[10px] font-bold text-text-muted uppercase tracking-widest mb-2">{timer === 0 ? "Status" : "Remaining"}</span>
+              <span className={`text-3xl font-mono font-bold ${timer === 0 ? "text-red-500" : "text-white"}`}>
+                {timer === 0 ? "TIME EXPIRED" : formatTime(timer)}
+              </span>
             </div>
             <div className="p-6 bg-white/[0.02] rounded-lg border border-white/5 shadow-sm">
               <span className="block text-[10px] font-bold text-text-muted uppercase tracking-widest mb-2">Attempted</span>
@@ -285,32 +321,33 @@ export default function PracticeMode() {
           {/* Main Question Area */}
           <div className="space-y-8 animate-in fade-in duration-500">
             {/* Progress Header */}
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 bg-surface-200/50 p-6 rounded-lg border border-white/5 backdrop-blur-sm sticky top-4 z-10 shadow-lg">
-              <div className="flex items-center gap-6 flex-grow">
-                <span className="text-[10px] font-bold text-brand-500 uppercase tracking-[0.2em] whitespace-nowrap">Question {currentQuestionIndex + 1} of {filteredQuestions.length}</span>
-                <div className="hidden md:flex flex-grow h-1 bg-white/5 rounded-full overflow-hidden max-w-xs">
-                  <div
-                    className="h-full bg-brand-500 transition-all duration-500"
-                    style={{ width: `${((currentQuestionIndex + 1) / filteredQuestions.length) * 100}%` }}
-                  />
+            <div className="flex flex-col gap-4 bg-surface-200/50 p-6 rounded-lg border border-white/5 backdrop-blur-sm sticky top-4 z-20 shadow-lg mb-8">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="flex flex-col gap-1">
+                  <span className="text-[10px] font-bold text-brand-500 uppercase tracking-[0.2em]">{selectedTest}</span>
+                  <span className="text-[10px] font-bold text-text-muted uppercase tracking-[0.2em]">Evaluation {currentQuestionIndex + 1} of {filteredQuestions.length}</span>
+                </div>
+                
+                <div className="flex items-center gap-4">
+                  <div className={`flex items-center gap-3 px-4 py-2 bg-white/5 rounded-md border ${timer < 60 ? 'border-red-500/50 bg-red-500/5' : 'border-white/5'}`}>
+                  <span className={`text-[10px] font-bold uppercase tracking-widest ${timer < 60 ? 'text-red-500' : 'text-text-muted'}`}>{timer < 60 ? 'Hurry' : 'Time'}</span>
+                  <span className={`text-xl font-mono font-bold leading-none ${timer < 60 ? 'text-red-500 animate-pulse' : 'text-white'}`}>{formatTime(timer)}</span>
+                </div>
                 </div>
               </div>
-
-              {/* Repositioned Timer */}
-              <div className="flex items-center gap-8">
-                <div className="flex items-center gap-3 px-4 py-2 bg-white/5 rounded-md border border-white/5">
-                  <span className="text-[10px] font-bold text-text-muted uppercase tracking-widest">Time</span>
-                  <span className="text-xl font-mono font-bold text-white leading-none">{formatTime(timer)}</span>
-                </div>
-
+              <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-brand-500 transition-all duration-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]"
+                  style={{ width: `${((currentQuestionIndex + 1) / filteredQuestions.length) * 100}%` }}
+                />
               </div>
             </div>
 
             <div className="glass p-8 md:p-12 rounded-lg border-white/5 shadow-xl relative overflow-hidden min-h-[500px]">
               {/* Passage for Verbal */}
               {currentQuestion.passage && (
-                <div className="mb-12 p-8 bg-surface-300/40 border-l-4 border-brand-500 rounded-lg text-text-primary text-base md:text-lg leading-loose font-normal shadow-inner backdrop-blur-md">
-                  <span className="block not-italic text-[10px] font-bold text-brand-500 uppercase tracking-[0.2em] mb-4 opacity-70">Comprehension Passage:</span>
+                <div className="mb-12 p-8 bg-surface-300/40 border-l-4 border-brand-500 rounded-lg text-text-primary text-base md:text-lg leading-loose font-normal shadow-inner backdrop-blur-md overflow-x-auto">
+                  <span className="block not-italic text-[10px] font-bold text-brand-500 uppercase tracking-[0.2em] mb-4 opacity-70 whitespace-nowrap">Comprehension Passage:</span>
                   <div className="space-y-4">
                     {currentQuestion.passage.split('\n').map((para, i) => (
                       <p key={i}>{para}</p>

@@ -151,11 +151,11 @@ export default function QuestionBank() {
           </div>
         ) : selectedTest ? (
           <div className="space-y-10 animate-in fade-in duration-700">
-            <div className="flex items-center gap-6 mb-12">
-              <h2 className="text-xs font-bold text-text-muted uppercase tracking-[0.3em] whitespace-nowrap bg-white/5 px-5 py-1.5 rounded-full border border-white/5">
-                Current Section: {selectedTest}
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-12">
+              <h2 className="w-fit text-xs font-bold text-text-muted uppercase tracking-[0.3em] bg-white/5 px-5 py-2 rounded-full border border-white/5">
+                Current Section: <span className="text-brand-500">{selectedTest}</span>
               </h2>
-              <div className="h-px flex-grow bg-white/5"></div>
+              <div className="hidden sm:block h-px flex-grow bg-white/5"></div>
             </div>
 
             {sections
@@ -177,8 +177,8 @@ export default function QuestionBank() {
                           </div>
 
                           {q.passage && (
-                            <div className="bg-surface-300/40 p-8 rounded-lg border-l-4 border-brand-500 text-text-primary text-base md:text-lg leading-loose font-normal shadow-inner backdrop-blur-sm mt-8">
-                              <span className="block text-[10px] font-bold text-brand-500 uppercase tracking-[0.2em] mb-4 opacity-70">Comprehension Passage:</span>
+                            <div className="bg-surface-300/40 p-8 rounded-lg border-l-4 border-brand-500 text-text-primary text-base md:text-lg leading-loose font-normal shadow-inner backdrop-blur-sm mt-8 overflow-x-auto">
+                              <span className="block text-[10px] font-bold text-brand-500 uppercase tracking-[0.2em] mb-4 opacity-70 whitespace-nowrap">Comprehension Passage:</span>
                               <div className="space-y-4">
                                 {q.passage.split('\n').map((para, i) => (
                                   <p key={i}>{para}</p>

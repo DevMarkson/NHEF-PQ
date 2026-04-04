@@ -4456,20 +4456,6 @@
           "explanation": ""
         },
         {
-          "number": "Q17",
-          "content": "Stamp duty of 3% is paid on house sales over £250,000. How much stamp duty is paid by purchasers of Apline houses in 2009?",
-          "options": [
-            "£16,425,000",
-            "£18,550,000",
-            "£19,425,000",
-            "£6,000,000",
-            "£8,550,000"
-          ],
-          "answer": "C",
-          "image": "",
-          "explanation": ""
-        },
-        {
           "number": "Q5",
           "content": "The average age of 8 teachers of a school is 38 years. When one teacher, aged 47, resigns, and another joins in, the average age of the staff members reduces by 1.5. What is the present age of the newly appointed teacher?",
           "options": [
@@ -4481,20 +4467,6 @@
           "answer": "35",
           "image": "",
           "explanation": "Total age = 304. After one leaves (47) and one joins (x): (304 - 47 + x)/8 = 36.5. 257 + x = 292. x = 35."
-        },
-        {
-          "number": "Q16",
-          "content": "The total number of £400,000 Apline houses sold in 2009 represented 80% of the annual sales target. If this target was split equally across 5 salerooms, what was the individual sales target for each salesroom?",
-          "options": [
-            "155",
-            "120",
-            "125",
-            "325",
-            "225"
-          ],
-          "answer": "C",
-          "image": "",
-          "explanation": ""
         },
         {
           "number": "Q4",
@@ -4562,20 +4534,6 @@
           "answer": "36 months",
           "image": "",
           "explanation": "Calculation: 9261 = 8000(1 + 0.05)^n. (1.05)^3 = 1.157625. So n = 3 years = 36 months."
-        },
-        {
-          "number": "Q20",
-          "content": "A marketing drive is to be used to increase the value of Jan-June house sales to the value of July-December house sales. If each £ spent on marketing results in £3 of increased sales, what value must be spent on marketing?",
-          "options": [
-            "£156.6 million",
-            "£75.4 million",
-            "£52.2 million",
-            "£36.6 million",
-            "£14.5 million"
-          ],
-          "answer": "E",
-          "image": "",
-          "explanation": ""
         }
       ]
     },
