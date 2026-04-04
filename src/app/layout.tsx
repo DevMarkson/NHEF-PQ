@@ -13,12 +13,19 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="flex flex-col min-h-screen selection:bg-emerald-500/30" suppressHydrationWarning>
         <Navbar />
-        <main className="flex-grow pt-4">
+        <main className="flex-grow pt-4 overflow-x-hidden">
           {children}
           <Analytics />
         </main>
