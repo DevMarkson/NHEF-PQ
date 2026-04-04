@@ -8,7 +8,7 @@ export async function GET() {
   try {
     const bugs = await Bug.find({}).sort({ createdAt: -1 });
     return NextResponse.json(bugs);
-  } catch (error) {
+  } catch (_error) {
     return NextResponse.json({ error: 'Failed to fetch bugs' }, { status: 500 });
   }
 }
@@ -22,7 +22,7 @@ export async function POST(request: Request) {
     }
     const bug = await Bug.create({ description });
     return NextResponse.json(bug, { status: 201 });
-  } catch (error) {
+  } catch (_error) {
     return NextResponse.json({ error: 'Failed to report bug' }, { status: 500 });
   }
 }
