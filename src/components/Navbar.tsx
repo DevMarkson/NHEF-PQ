@@ -34,7 +34,7 @@ export default function Navbar() {
             { name: "Home", path: "/" },
             { name: "Question Bank", path: "/question-bank" },
             { name: "Practice Mode", path: "/practice" },
-            { name: "Notice a Bug", path: "/bugs" },
+            { name: "Report a Bug", path: "/bugs" },
           ].map((link) => (
             <Link
               key={link.path}
@@ -79,7 +79,7 @@ export default function Navbar() {
                 { name: "Home", path: "/" },
                 { name: "Question Bank", path: "/question-bank" },
                 { name: "Practice Mode", path: "/practice" },
-                { name: "Notice a Bug", path: "/bugs" },
+                { name: "Report a Bug", path: "/bugs" },
               ].map((link) => (
                 <Link
                   key={link.path}

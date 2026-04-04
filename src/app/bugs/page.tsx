@@ -89,10 +89,10 @@ function BugTrackerContent() {
     <div className="w-full max-w-4xl mx-auto px-6 py-12 md:py-20">
       <header className="mb-16 space-y-4">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
-          Notice a <span className="text-brand-500">Bug</span>
+          Spotted a <span className="text-brand-500">Glitch?</span>
         </h1>
         <p className="text-text-secondary text-base md:text-lg max-w-2xl leading-relaxed">
-          Spotted something that isn&apos;t quite right? Report it here to help us build the perfect NHEF preparation tool.
+          Help us perfect the NHEF experience. If something isn&apos;t working right, report it below and we&apos;ll squash it!
         </p>
       </header>
 
