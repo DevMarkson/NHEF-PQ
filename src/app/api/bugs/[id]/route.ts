@@ -5,11 +5,11 @@ import Bug from '@/models/Bug';
 
 export async function PATCH(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   await dbConnect();
   try {
-    const { id } = params;
+    const { id } = await params;
     const { status, reply } = await request.json();
 
     const updatedBug = await Bug.findByIdAndUpdate(
