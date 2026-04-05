@@ -103,7 +103,7 @@ export default function QuestionBank() {
             </p>
           </div>
           <a
-            href="https://mdv1bzkkj9z23omg.public.blob.vercel-storage.com/DRAGNET_studypack_updated.pdf"
+            href="/api/download-dragnet"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full md:w-auto px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-bold rounded-lg transition-all shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2 hover-lift"
