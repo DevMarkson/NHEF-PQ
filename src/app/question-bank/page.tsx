@@ -89,6 +89,33 @@ export default function QuestionBank() {
         </p>
       </div>
 
+      {/* Accuracy Notice */}
+      <div className="mb-12 animate-in fade-in slide-in-from-bottom-5 duration-1000 delay-300">
+        <div className="glass p-5 rounded-xl border border-emerald-500/20 bg-emerald-500/5 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg shadow-emerald-500/5">
+          <div className="flex items-center gap-4 text-center md:text-left">
+            <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center shrink-0 border border-emerald-500/20">
+              <svg className="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <p className="text-sm text-emerald-100/90 leading-relaxed max-w-xl">
+              Found an accuracy issue? For the highest precision, we recommend downloading the <span className="text-emerald-400 font-bold">DRAGNET Study Pack</span> updated for 2024.
+            </p>
+          </div>
+          <a
+            href="https://mdv1bzkkj9z23omg.public.blob.vercel-storage.com/DRAGNET_studypack_updated.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full md:w-auto px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-bold rounded-lg transition-all shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2 hover-lift"
+          >
+            Download Studypack
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
       <div className="space-y-16">
         {/* Filter Area - Always visible for UX consistency */}
         <div className="grid md:grid-cols-2 gap-8">

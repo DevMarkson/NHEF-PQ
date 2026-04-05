@@ -46,6 +46,14 @@ export default function Navbar() {
             </Link>
           ))}
           <a
+            href="https://mdv1bzkkj9z23omg.public.blob.vercel-storage.com/DRAGNET_studypack_updated.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 text-sm font-semibold rounded-md transition-all border border-emerald-500/20 active:scale-[0.98] shadow-sm text-center"
+          >
+            Download Dragnet
+          </a>
+          <a
             href="https://www.youtube.com/watch?v=hhEamn4XlFw&t=223s"
             target="_blank"
             rel="noopener noreferrer"
@@ -95,6 +103,15 @@ export default function Navbar() {
 
             <div className="pt-8 border-t border-white/10 space-y-6">
               <span className="text-[10px] font-bold text-brand-500 uppercase tracking-widest opacity-50">Community</span>
+              <a
+                href="https://mdv1bzkkj9z23omg.public.blob.vercel-storage.com/DRAGNET_studypack_updated.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-full px-4 py-4 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 font-bold rounded-lg transition-all border border-emerald-500/20"
+                onClick={handleLinkClick}
+              >
+                Download Dragnet PDF
+              </a>
               <a
                 href="https://www.youtube.com/watch?v=hhEamn4XlFw&t=223s"
                 target="_blank"
