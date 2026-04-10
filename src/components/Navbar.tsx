@@ -34,6 +34,7 @@ export default function Navbar() {
             { name: "Home", path: "/" },
             { name: "Question Bank", path: "/question-bank" },
             { name: "Practice Mode", path: "/practice" },
+            { name: "Interview Prep", path: "/interview-prep" },
             { name: "Report a Bug", path: "/bugs" },
           ].map((link) => (
             <Link
@@ -87,6 +88,7 @@ export default function Navbar() {
                 { name: "Home", path: "/" },
                 { name: "Question Bank", path: "/question-bank" },
                 { name: "Practice Mode", path: "/practice" },
+                { name: "Interview Prep", path: "/interview-prep" },
                 { name: "Report a Bug", path: "/bugs" },
               ].map((link) => (
                 <Link
