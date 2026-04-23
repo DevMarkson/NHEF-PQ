@@ -30,8 +30,16 @@ Standardized test content from past papers often contains errors. To keep the qu
 - **Language**: TypeScript
 - **Database**: MongoDB via [Mongoose](https://mongoosejs.com/)
 - **Storage**: [Vercel Blob](https://vercel.com/storage/blob) for study materials and media
-- **Analytics**: [Vercel Analytics](https://vercel.com/analytics) for performance monitoring
+- **Analytics**: [Vercel Analytics](./public/analytics.png) for performance monitoring and usage tracking
 - **Styling**: Tailwind CSS (with Glassmorphism aesthetic)
+
+---
+
+## Usage & Impact
+
+Since its launch, NHEF-PQ has seen significant engagement from candidates across Nigeria, with over **4,100 unique visitors** and more than **13,000 page views**, helping thousands prepare for their futures.
+
+![Vercel Analytics](./public/analytics.png)
 
 ---
 
